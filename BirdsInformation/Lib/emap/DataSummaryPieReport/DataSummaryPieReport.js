@@ -127,10 +127,20 @@
         },
         getDataSummary: function () {
             var currentWidget = this;
+            var token = localStorage.getItem('token'); // Assuming 'token' is the key where your JWT is stored
+            var refreshtoken = localStorage.getItem('refreshtoken');
+
+            if (!token) {
+                console.error("Token not found in localStorage!");
+                return;
+            }
             var GPSData, GSMData, ArgosData;
             $(".Overlay").fadeIn();
             $.ajax({
                 type: "GET",
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
                 url: currentWidget.ServiceUrl + "getTransactionsCount",
                 success: function (data) {
                     var ResultSet = data.getTransactionsCountResult;
