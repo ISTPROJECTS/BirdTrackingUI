@@ -1,0 +1,22 @@
+﻿define({
+    title: 'Basemaps',
+    Geoportal: "البوابة المكانية",
+    Landsat8: "Landsat8",
+    Elevations: "الارتفاعات",
+    ShadedRelief: "التضاريس المظللة",
+    WorldBoundries: "خريطة العالم",
+    AdsicBaseMap: "Adsic خريطة الأساس",
+    googlestreets: "خراط قوقل للطرق",
+    Imagery: "صور الأقمار الصناعية",
+    OpenStreetMap: "خريطة الملاحة",
+    LightGrayCanvas: "خلفية باللون الرمادي الفاتح",
+    Oceans: "المحيط",
+    NationalGeographic: "National Geographic",
+    DarkGrayCanvas: "خلفية باللون الرمادي الداكن",
+    Streets: "خرائط الطرق",
+    Topographic: "خريطة طبوغرافية",
+    ImagerywithLabels: "صور أقمار صناعية بالتفاصيل",
+    TerrainwithLabels: "التضاريس مع التسميات",
+    ADSIC: "ADSIC",
+    NightStreets: "الشوارع (ليلاً)"
+});

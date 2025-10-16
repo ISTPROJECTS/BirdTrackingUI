@@ -1,0 +1,83 @@
+﻿<div data-dojo-attach-point="Animationdiv" class="Animationdiv" style="display:none">
+    
+    <div id="map" style="position: absolute !important;"></div>
+
+    <a href="javascript:void()" class="CloseContainerG"><i class="far fa-times-circle"></i></a>
+
+
+    <div class="MainAnimationSideDiv">
+        <div class="AnimationSideDiv">
+            <img data-dojo-attach-point="gmapBirdImage" class="BirdImagePannel" style="width:100%; height:160px; padding-bottom:10px;" />
+            <div data-dojo-attach-point="gmapBirdName" class="Title BirdTitlePannel" style="padding-top:5px;"> </div>
+
+            <div class="AnimBody2">
+                <form class="SlideDateDIv">
+                    <div class="PanelToggleAnim"><i class="fas fa-angle-double-left"></i></div>
+
+                    <div style="text-align:center;" data-dojo-attach-point="gmapbirdDetails" class="IDDateBox">
+
+
+
+                    </div>
+                    <!--<div data-dojo-attach-point="gmap_message"></div>-->
+                    <div class="form-group d-flex">
+                        <button type="button" data-dojo-attach-point="updategmap" class="btn btn-primary btnupdate" data-dojo-attach-event="onclick:AddDataTogmapOnDate">${_i18n.Update}</button>
+                        <button type="button" data-dojo-attach-point="Animationrecord" class="btn btn-primary btnrecord lg-showhide">${_i18n.ExportVideo}</button>
+                    </div>
+                    <div class="form-group mt-5 row SliderDIv">
+
+                        <label for="customRange1" class="form-label">${_i18n.AnimationSpeed}</label>
+                        <input type="range" class="form-range" data-dojo-attach-point="speedval" min="5" max="100" step="5" value="60">
+                        <!--<input type="range" class="form-range" data-dojo-attach-point="speedval" min="100" max="1000" step="1" value="300">-->
+                        <div class="col-md-4 col-4 p-0 " style="text-align:left">
+                            <small>${_i18n.High}</small>
+
+
+                        </div>
+
+                        <div class="col-md-4 col-4 p-0 text-center "><button type="button" data-dojo-attach-point="animControl" class="btn btn-secondary SmallBtn">${_i18n.Stop}</button></div>
+                        <div class="col-md-4 col-4 p-0 text-right">
+                            <small>${_i18n.Low}</small>
+                        </div>
+
+                        <div class="col-md-12 text-center form-check form-switch">
+
+                            <input type="checkbox" id="hide-poi" checked="" class="layerdisplaystatus form-check-input"><label id="Infoid" style="text-align: left; padding-left: 40px; margin-top: -4px !important;">${_i18n.HideInfoWindow}</label>
+                        </div>
+                    </div>
+
+                    
+                </form>
+            </div>
+
+
+        </div>
+
+        <div data-dojo-attach-point="divDateTimeSlider" style="display:none">
+            <div id="bottomPanel">
+                <div id="timeInfo">
+                    <div>Bird Tracking From <span id="daterange">1921 to 2009</span> </div>
+                    <div id="timeSliderDiv"></div>
+                </div>
+            </div>
+
+        </div>
+        <div id="bottomPanelforInfoWindow" class="bottompanelIWForPublic">
+            <div data-dojo-attach-point="divinfo" id="infowin">
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+

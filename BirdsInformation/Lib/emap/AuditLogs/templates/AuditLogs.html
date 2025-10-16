@@ -1,0 +1,41 @@
+﻿<div>
+
+    <a href="javascript:void()" data-bs-toggle="tooltip" title="${_i18n.Close}" class="CloseContainer"><i class="far fa-times-circle"></i></a>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6 col-xs-12 ">
+                <h4 class="SubHeading">${_i18n.ManageDataLogs}</h4>
+            </div>
+        </div>&nbsp;&nbsp;
+
+
+        <div class="row pb-3  d-flex">
+            <div class="col-lg-3 col-md-4">
+            <div class="form-group ">
+                <label class="px13 w-50 mt-1" for="fromdate">${_i18n.FromDate}:</label>
+                <input type="text" data-date-format="dd-mm-yyyy" class="form-control dateclass" data-dojo-attach-point="auditfromdate" placeholder="${_i18n.ddmmyyyy}" data-dojo-attach-event="onclick:ClearLabelfromdate" data-auto-close="true" readonly="readonly">
+                <small data-dojo-attach-point="lblfromdate" style="display:none" class="errorClass">${_i18n.PleaseEnterFromDate} </small>
+            </div>
+                </div>
+            <div class="col-lg-3 col-md-4">
+                <div class="form-group">
+                    <label class="px13 w-50 mt-1" for="todate">${_i18n.ToDate}:</label>
+                    <input type="text" data-date-format="dd-mm-yyyy" class="form-control dateclass" data-dojo-attach-point="audittodate" placeholder="${_i18n.ddmmyyyy}" data-dojo-attach-event="onclick:ClearLabeltodate" data-auto-close="true" readonly="readonly">
+                    <small data-dojo-attach-point="lbltodate" style="display:none" class="errorClass">${_i18n.PleaseEnterToDate} </small>
+                    <small data-dojo-attach-point="lblgreater" style="display:none" class="errorClass">${_i18n.ToDateShouldbeGreaterthanFromDate} </small>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4" style="margin-top:22px;">
+                <button class="btn btn-primary" data-dojo-attach-point="submit" type="button" data-dojo-attach-event="onclick:getresults"> ${_i18n.Submit} </button>
+                <button class="btn btn-secondary" data-dojo-attach-point="clear" type="button" data-dojo-attach-event="onclick:clearresults"> ${_i18n.Clear} </button>
+            </div>
+            <div data-dojo-attach-point="TableAuditDiv">
+                <table class="tableaudit BtisTableFull" cellpadding="0" cellspacing="0" border="0" data-dojo-attach-point="AuditLogTable" style="width:100%">
+                </table>
+            </div>
+
+
+    </div>
+</div>
+

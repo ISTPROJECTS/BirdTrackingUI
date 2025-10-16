@@ -1,0 +1,15 @@
+﻿define({
+    MapTitleLabel: "أدخل عنوان الخريطة ",
+    ModuleNameLabel: "اطبع الخريطة",
+    TitleLabel: "العنوان",
+    FormatLabel: "الصيغة",
+    LayoutLabel: "شكل الخريطة",
+    ExportLabel: "تصدير",
+    ClearLabel: "مسح",
+    PleaseEnterMapTitle: "أدخل عنوان الخريطة",
+    PleaseSelectFormat: "اختر الصيغة",
+    PleaseSelectLayout: "اختر الشكل",
+    SelectFormat: "اختر الصيغة",
+    SelectLayout: "اختر الشكل",
+    EnterMapTitle: "أدخل عنوان الخريطة",
+});

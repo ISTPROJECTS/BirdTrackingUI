@@ -1,0 +1,22 @@
+﻿   <div data-dojo-attach-point="StopOverdiv" class="StopOverdiv" style="display:none">
+    <div class="SubHeading">${_i18n.StopOver}</div>
+    <!--<form>-->
+
+    <div class="form-group">
+        <label for="Distance">${_i18n.Distance} (${_i18n.KM})</label>
+        <input class="form-control" type="number" data-dojo-attach-point="distance" name="distance" min="0" max="1000">
+        <small data-dojo-attach-point="lbldistance" style="display:none" class="errorClass">${_i18n.PleaseEnterDistance}</small>
+    </div>
+    <div class="form-group">
+        <label for="Timeperiod">${_i18n.TimePeriod} (${_i18n.TIhours})</label>
+        <input class="form-control" type="number" data-dojo-attach-point="timeperiod" name="Timeperiod" min="0" max="1000">
+        <small data-dojo-attach-point="lbltime" style="display:none" class="errorClass">${_i18n.PleaseEnterTimeInterval}</small>
+    </div>
+
+    <!--</form>-->
+    <!--<button class="btn btn-primary" data-dojo-attach-point="runstopover" type="button" data-dojo-attach-event="onclick:getresults"> ${_i18n.Run} </button>-->
+    <button class="btn btn-primary" data-dojo-attach-point="runstopover" type="button" data-dojo-attach-event="onclick:getresultsstop"> ${_i18n.Run} </button>
+
+    <button class="btn btn-secondary closeStop" data-dojo-attach-point="run" type="button"> ${_i18n.Close} </button>
+
+</div>

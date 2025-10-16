@@ -1,0 +1,44 @@
+﻿#footer {
+    top: auto !important;
+    bottom: 0px !important;
+}
+
+table.dataTable thead .sorting {
+    background-color: #ffffff;
+    font-weight: bold;
+}
+
+.tabStripButton {
+    display: none;
+}
+
+ui-icon dgrid-hider-toggle {
+    display: none;
+}
+.dgrid-cell {
+    font-size: 11px;
+}
+
+.dgrid-header-row {
+    z-index: 9999 !important
+}
+
+.dgrid-scroller {
+    margin-top: 35px !important;
+}
+
+.dijitTab .tabLabel {
+    padding: 8px 20px;
+    color: #ffffff;
+    background-color: #ff6a00;
+    font-size: 11px;
+}
+
+.dijitTabContainerTop-tabs .dijitTab {
+    padding-right: 3px;
+    border-start-end-radius: 10px;
+}
+
+.dgrid-hider-toggle {
+    display: none;
+}

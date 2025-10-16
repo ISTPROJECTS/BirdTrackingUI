@@ -1,0 +1,66 @@
+﻿body {
+    /*height: 100%;*/
+    margin: 0;
+    padding: 0;
+}
+.errorClass {
+    color: #e12120;
+    padding-top: 2px;
+}
+#floating-panel {
+    position: absolute;
+    top: 10px;
+    left: 25%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: "Roboto", "sans-serif";
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+#floating-panel {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -180px;
+    width: 350px;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+}
+
+#latlng {
+    width: 225px;
+}
+.required{
+    color:red;
+}
+.BtisTableFull tr:nth-child(even) {
+    background-color: #f2f2f2 !important;
+}
+.esriToggleButton {
+   
+    width: 148px !important;
+    background: #e1e1e1 !important;
+    padding-left: 10px !important;
+    border: 1px solid #ddd !important;
+}
+.swal2-icon.swal2-warning {
+    border-color: #f46239 !important;
+    color: #f46239 !important;
+}
+.swal2-styled.swal2-confirm {
+    /*background-color: #f46239 !important;*/
+    width: 120px !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-ring {
+    border: 0.25em solid rgb(25 135 84 / 30%) !important;
+}
+.swal2-icon.swal2-success [class^=swal2-success-line] {
+    background-color: #198754 !important;
+}

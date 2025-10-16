@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Bird Tracking Information System</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+
+    <link href="CSS/Datepicker.css" rel="stylesheet" />
+    <link href="CSS/sweetalert2.min.css" rel="stylesheet" />
+    <link href="CSS/sumoselect.css" rel="stylesheet" />
+
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon1.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Omnes:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="//use.typekit.net/vgm8wfl.css">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeNH7YqAAAAAAE7SvcIRTbfsPMEL1efYdPqKdgh"></script>
+    <script src="JavaScript/jquery.js"></script>
+    <script src="JavaScript/sweetalert2.min.js"></script>
+    <script src="JavaScript/Commonfuncs.js"></script>
+    <script src="JavaScript/emapConfig.js"></script>
+
+
+    <!-- =======================================================
+    * Template Name: Selecao - v4.5.0
+    * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+
+
+
+</head>
+
+<body>
+    <div id="myNav" class="overlayPanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <div class="row">
+                <div class="col-md-5">
+
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img id="imgBird" class="d-block w-100 img-responsive img-rounded" src="assets/img/arabian_partridge.jpg" alt="First slide">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="divBirdInfo" class="col-md-6" style="text-align:justify; line-height:1.6; letter-spacing:1px">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center  header-transparent ">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <div class="logo">
+
+                <a href="#"><img src="assets/img/logo.svg" style="margin-top:12px; width:250px;" alt="" class="img-fluid"></a>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#Tracking_Birds">Birds Info</a></li>
+                    <li><a class="nav-link scrollto " href="#Contact">Get in Touch </a></li>
+                    <li><a class="nav-link scrollto HeaderLogin" href="#lblLogin">Login</a></li>
+
+                    <li class="">
+                        <button class="btn btn-success LanguageBut" style="margin-left:15px !important" id="lblLanguage" value="عربي">عربي</button>
+                    </li>
+                    <li><a class="nav-link" href="javascript:void(0)" id="lblBackToApplication">Application</a></li>
+                </ul>
+
+                <i class="bi bi-list mobile-nav-toggle"></i>
+
+            </nav>
+            <!-- .navbar -->
+
+        </div>
+    </header>
+    <!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero_content">
+        <div class="container mt-5">
+            <div class="row mt-5 pt-5">
+                <div class="col-md-5 mt-5 Top100">
+                    <h1 class="text-white fw-bold animate__animated animate__fadeInDown">
+                        Bird Tracking <br>
+                        Information System
+                    </h1>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="hero-bird mt-5">
+                        <img src="assets/img/hero_bird_Home.png" class="img-fluid" data-aos="fade-left">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+    <!-- End Hero -->
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+
+        <div class="container-fluid">
+            <!-- <div class="row">
+               <div class="col-md-12">
+                 <div class="about_title">
+                   <h1 class="float-end" data-aos="zoom-in">ABOUT</h1>
+                 </div>
+               </div>
+             </div>-->
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="about_img_sec" data-aos="fade-right">
+                        <img src="assets/img/about_img.png" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="container mt-5">
+                        <div class="about_text">
+                            <h2 class="animate__animated animate__fadeInDown"><span class="text-warning fw-bolder">About</span> Tracking Information System</h2>
+                            <p>Millions of birds travel from their northern breeding ground in autumn every year to avoid harsh winters and associated food shortages. Birds use their traditional routes or flyways to move to their southern wintering grounds in autumn and return to their breeding grounds at the onset of spring. Such annual migratory events bring several hundred thousand birds to countries which fall on the flyways and offer, feeding, resting opportunities in a generally protected environment. The United Arab Emirates lying at the North-south migration route attracts millions of migratory birds from the Palearctic every year. Understanding movement and migration of key species of birds is an important element of any bird conservation activity.</p>
+                            <p>
+                                The successful capture and tagging of five greater flamingos at Abu Dhabi’s Al Wathba Wetland Reserve in November 2005 the first ever in the entire Arabian Peninsula generated widespread media and public interest. At the moment, 85 individual birds of 12 different species are monitored, including water birds such as crab plovers and crested terns, as well as a few raptors such as osprey, greater spotted eagles and Egyptian vultures.
+
+                            </p>
+                            <p>Improvements in telemetry technology are allowing us to monitor animal movements with increasing accuracy, precision and frequency. The increased complexity of the data collections, however, demands additional software and programming skills to process, store and disseminate the datasets.</p>
+                            <p>
+                                Bird Tracking Information system developed for the archiving, processing and sharing of telemetry data. System offer secure storage,
+                                multi-user support and analysis tools and are a step along the way to improving data access, long-term data preservation and science
+                                communication. While this software platform promote data sharing, access to the majority of the data and to the software behind these
+                                systems remains restricted.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- End About Section -->
+    <!-- ======= Tracking_Birds Section ======= -->
+    <section id="Tracking_Birds" class="Tracking_Birds">
+        <div class="container" style="margin-top: 259px;">
+            <div class="d-flex justify-content-between">
+                <div class="mt-5">
+                    <h2 class="text-white mobiletracking_text" id="Tracking_BirdsAnchor">Tracked Species</h2>
+                </div>
+            </div>
+            <div class="tracking_main One" id="One">
+                <div class="row mt-4 pt-4">
+                    <div class="col-md-3">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-right" onclick="openNav('Arabian Partridge')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/1.png" class="img-fluid">
+                            </div>
+                        </div> <h6 class="text-dark mx-5 mt-3">Arabian Partridge</h6>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-left" onclick="openNav('Bar tailed Godwit')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/Limosalapponica.png" class="img-fluid">
+                            </div>
+                        </div> <h6 class="text-dark mx-5 mt-3">Bar-tailed Godwit</h6>
+                    </div>
+                    <div class="col-md-3  ">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-right" onclick="openNav('Crab Plover')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/2.png" class="img-fluid mt-5">
+                            </div>
+
+                        </div>
+                        <h6 class="text-dark  mt-3">Crab Plover</h6>
+                    </div>
+                    <div class="col-md-3 ">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-left" onclick="openNav('Egyptian Vulture')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/3.png" class="img-fluid mt-3">
+                            </div>
+
+                        </div> <h6 class="text-dark mx-5 mt-3">Egyptian Vulture</h6>
+                    </div>
+                </div>
+                <div class="row mt-4 pt-4">
+                    <div class="col-md-3">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-left" onclick="openNav('Eurasian Oystercatcher')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/Haematopusostralegus.png" class="img-fluid">
+                            </div>
+                        </div> <h6 class="text-dark mx-5 mt-3">Eurasian Oystercatcher</h6>
+                    </div>
+                    <div class="col-md-3 ">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-right" onclick="openNav('Golden Eagle')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/5.png" class="img-fluid">
+                            </div>
+
+                        </div> <h6 class="text-dark mx-5 mt-3">Golden Eagle</h6>
+                    </div>
+                    <div class="col-md-3 ">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-left" onclick="openNav('Great Crested Tern')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/4.png" class="img-fluid">
+                            </div>
+                        </div> <h6 class="text-dark mx-5 mt-3">Great Crested Tern</h6>
+                    </div>
+                    <div class="col-md-3 ">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-right" onclick="openNav('Greater Flamingo')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/6.png" class="img-fluid">
+                            </div>
+
+                        </div> <h6 class="text-dark mx-5 mt-3">Greater Flamingo</h6>
+                    </div>
+                </div>
+                <div class="row mt-4 pt-4">
+                    <div class="col-md-3 ">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-left" onclick="openNav('Greater Spotted Eagle')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/7.png" class="img-fluid mt-3">
+                            </div>
+
+                        </div> <h6 class="text-dark mx-5 mt-3">Greater Spotted Eagle</h6>
+                    </div>
+                    <div class="col-md-3 ">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-left" onclick="openNav('Levant Sparrowhawk')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/8.png" class="img-fluid">
+                            </div>
+                        </div> <h6 class="text-dark mx-5 mt-3">Levant Sparrowhawk</h6>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-right" onclick="openNav('Marsh Harrier')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/9.png" class="img-fluid">
+                            </div>
+
+                        </div> <h6 class="text-dark mx-5 mt-3">Marsh Harrier</h6>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-left" onclick="openNav('Northern Pintail')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/Anasacuta.png" class="img-fluid">
+
+                            </div>
+                        </div> <h6 class="text-dark mx-5 mt-3">Northern Pintail</h6>
+                    </div>
+
+                </div>
+                <div class="row mt-4 pt-4">
+                    <div class="col-md-3">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-left" onclick="openNav('Northern Shoveler')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/Anasclypeata.png" class="img-fluid">
+                            </div>
+                        </div> <h6 class="text-dark mx-5 mt-3">Northern Shoveler</h6>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-right" onclick="openNav('Osprey')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/10.png" class="img-fluid mt-5">
+                            </div>
+
+                        </div>
+                        <h6 class="text-dark  mt-3">Osprey</h6>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-left" onclick="openNav('Red Billed Tropicbird')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/11.png" class="img-fluid mt-3">
+                            </div>
+
+                        </div> <h6 class="text-dark mx-5 mt-3">Red Billed Tropicbird</h6>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-left" onclick="openNav('Sooty Falcon')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/12.png" class="img-fluid">
+                            </div>
+                        </div> <h6 class="text-dark mx-5 mt-3">Sooty Falcon</h6>
+                    </div>
+                </div>
+                <div class="row mt-4 pt-4">
+                    <div class="col-md-3">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-left" onclick="openNav('Sooty Gull')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/13.png" class="img-fluid">
+                            </div>
+                        </div> <h6 class="text-dark mx-5 mt-3">Sooty Gull</h6>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-left" onclick="openNav('Sparrowhawk')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/14.png" class="img-fluid">
+                            </div>
+                        </div> <h6 class="text-dark mx-5 mt-3">Sparrowhawk</h6>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="Tracking_Birds_circle bx-fade-up-hover" data-aos="fade-left" onclick="openNav('Steppe Eagle')">
+                            <div class="Tracking_Birds_circle_inner">
+                                <img src="assets/img/gallery_images/15.png" class="img-fluid">
+                            </div>
+                        </div> <h6 class="text-dark mx-5 mt-3">Steppe Eagle</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Tracking_Birds Section -->
+    <!-- ======= Portfolio Section ======= -->
+    <section id="Contact" class="Contact">
+        <div class="container mt-5">
+            <h2 class="text-white text-center mobiletracking_text mt-5">Get in Touch</h2>
+
+            <p class="text-warning mt-5 fw-bolder">Abu Dhabi</p>
+            <div class="row">
+                <div class="col-md-12 p-0">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-md-6 col-xl-3 RightBorder">
+                                <h6 class="text-white mt-3 mx-4"><i class="fas fa-map-marker-alt pr-3"></i>ADDRESS</h6>
+                                <p class="text-white mt-1 mx-4">
+                                    Environment Agency - Abu Dhabi HQ ,
+                                    Al Mamoura Building (A), Ahl Al Azm Street, Abu Dhabi, United Arab Emirates.
+                                    P.O Box: 45553
+                                </p>
+
+                            </div>
+                            <div class="col-md-6 col-xl-3 RightBorder">
+                                <h6 class="text-white mt-3 mx-4"><i class="far fa-clock pr-3"></i>OPENING HOURS:</h6>
+                                <p class="text-white mt-1 mx-4 small">
+                                    7:30 AM to 3:30 PM | Monday-Thursday
+                                    7:30 AM to 12:00 PM | Friday
+                                </p>
+
+
+
+                            </div>
+                            <div class="col-md-6 col-xl-3 RightBorder">
+                                <h6 class="text-white mt-3 mx-4"><i class="fas fa-phone-alt pr-3"></i>PHONE:</h6>
+                                <p class="text-white mt-1 mx-4 small">+971 2 693 4444</p>
+
+
+                            </div>
+                            <div class="col-md-6 col-xl-3">
+                                <h6 class="text-white mt-3 mx-4"><i class="far fa-envelope pr-3"></i>EMAIL:</h6>
+                                <p class="text-white mt-1 mx-4 small"><a class="nav-link scrollto " href="mailto:customerhappiness@ead.gov.ae">customerhappiness@ead.gov.ae</a></p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div style="width: 100%; margin-top: 50px; height: 500px">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3631.636568762568!2d54.385701114872575!3d24.46339136708151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e688028c0ca8f%3A0xfaac0a02f60731f!2sEnvironment%20Agency%20-%20Abu%20Dhabi!5e0!3m2!1sen!2sin!4v1632417569484!5m2!1sen!2sin" width="100" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <defs>
+                <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+            </defs>
+            <g class="wave1">
+                <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)"/>
+            </g>
+            <g class="wave2">
+                <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)"/>
+            </g>
+            <g class="wave3">
+                <use xlink:href="#wave-path" x="50" y="9" fill="rgba(255,255,255, .2)"/>
+            </g>
+        </svg>
+    </section>
+
+    <!-- End Portfolio Section -->
+    <!-- ======= Pricing Section ======= -->
+    <section id="Login" class="Login">
+
+        <div class="container mt-5">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-10 col-md-12 col-12">
+                    <span class="logintitle_text" style="visibility:hidden">LOGIN</span>
+
+                    <div class="login_box" id="lblLogin">
+
+                        <div class="row">
+
+                            <div class="col-md-6 mt-3" id="LoginDiv">
+                                <span id="lblStatus" style="color: #e12120; padding-left: 130px">
+                                </span>
+                                <h2 class="text-white mx-4">Login <span class="fw-light">Application</span></h2>
+                                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                                    <div class="form-group mx-4 mt-3">
+                                        <span style="font-family:'Open Sans';font-size:13px;color:white">User Name:</span>
+                                        <input type="text" name="name" class="form-control" id="UserName" onchange="ClearLoginLabels()" style="font-family:'Open Sans';font-size:13px;" placeholder="Your Name" required data-bs-toggle='tooltip' title="Please fill out this field">
+                                        <span class="errorClass" id="lblusername" style="display:none">Please provide User Name</span>
+
+                                    </div>
+                                    <div class="form-group mx-4 mt-3">
+                                        <span style="font-family: Open Sans; font-size: 13px; color: white">Password:</span>
+                                        <div>
+                                            <input type="password" name="password" value="secret" class="form-control" id="UserPwd" onchange="ClearLoginLabels()" placeholder="Password" required data-bs-toggle='tooltip' title="Please fill out this field" style="font-family:'Open Sans';font-size:13px;">
+                                            <!--<span toggle="#UserPwd" class="fa fa-fw fa-eye field-icon toggle-password"></span>-->
+                                            <span toggle="#UserPwd" class="fa fa-fw fa-eye field-icons toggle-password" style="margin-left: -5%;display:inline;
+                                                                                                                        vertical-align: middle"></span>
+                                        </div>
+                                        <span class="errorClass" id="lblPassWord" style="display:none">Please provide Password</span>
+
+                                    </div>
+                                    <div class="inputDiv">
+                                        <div class="unstyled centered">
+                                            <div>
+                                                <input class="styled-checkbox" type="checkbox" id="chkRememberMe">
+                                                <label class="errorClass1" for="styled-checkbox-1" style="font-family:'Open Sans';font-size:13px;">Remember me</label>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="d-flex justify-content-between mx-4  mt-4" id="Login1">
+                                        <div class="d-flex">
+                                            <button type="button" class="btn btn-warning mt-1" id="LoginPage" onclick="CheckLoginUser()">
+                                            <label class="ml-2" style="font-family:'Open Sans';font-size:14px;">Login</label>  </button><img id="loading-image" style="height:20px; width:20px; margin-top:10px" class="me-2 loading-image" src="Images/loading-buffering.gif" alt="Loading..." />
+                                            <!--<button type="button" class="btn btn-warning mt-1" id="LoginBack" onclick="CheckLoginUserBack()"><label class="ml-2" style="font-family:'Open Sans';font-size:14px;">Login Back To Application</label>  </button><img id="loading-image" style="height:20px; width:20px; margin-top:10px" class="me-2 loading-image" src="Images/loading-buffering.gif" alt="Loading..." />-->
+
+                                        </div>
+                                        <div class="">
+                                            <a href="javascript:void()" id="FPWDLink"><span class="text-warning" style="padding-top:14px; font-size:14px;font-family:'Open Sans'">Forgot Password?</span></a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="login_center_text mx-4">
+                                        <p class="text-white text-center" style="padding-top:14px; font-size:14px;font-family:'Open Sans'">Not Registered yet?   <a href="javascript:void()" id="SignupLink"><span class="text-warning">Sign Up</span></a></p>
+                                    </div>
+                                </form>
+
+                            </div>
+
+
+
+                            <div class="col-md-6 mt-5" style="display:none" id="FPwdDiv">
+                                <h2 class="text-white mx-4"><span>Forgot Password</span></h2>
+                                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                                    <div class="form-group mx-4 mt-5">
+                                        <input type="email" id="email" class="form-control" onchange="forgotpwd()" placeholder="Enter Email">
+                                        <label id="lblemail" class="errorClass" style="display:none;padding-top:5px;">Enter Valid Email ID</label>
+                                    </div>
+                                    <div class="d-flex justify-content-between mx-4 mt-4">
+                                        <div class="d-flex">
+                                            <button type="button" class="btn btn-warning" onclick="SubmitForgotPwd()"><label class="ml-2" style="font-family:'Open Sans';font-size:14px;">Submit</label></button><img id="loading-FPwdids" style="height:20px; width:20px; margin-top:10px" class="loading-image" src="Images/loading-buffering.gif" alt="Loading..." />
+
+                                        </div>
+
+                                        <div class="login_center_text mx-0" style="margin-top: 10px;">
+                                            <a href="javascript:void()" id="LoginLink"><span class="text-warning" style="font-family:'Open Sans';font-size:14px;">Login</span></a>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+
+
+                            <div class="col-md-6 mt-3" id="SignupDiv">
+                                <h2 class="text-white mx-4">Sign Up <span class="fw-light">Application</span></h2>
+                                <form action="forms/contact.php" method="post" name="form" role="form" class="php-email-form">
+                                    <div class="form-group mx-4 mt-2">
+                                        <span style="font-family:'Open Sans';font-size:13px;color:white">Email:</span>
+                                        <input type="text" name="name" class="form-control" id="Uemail" onchange="Clearlabels()" placeholder="Email" required data-bs-toggle='tooltip' title="Please fill out this field">
+                                        <label id="lblUemail" style="display:none" class="errorClass">Enter Valid Email ID</label>
+                                    </div>
+                                    <div class="form-group mx-4 mt-2">
+                                        <span style="font-family:'Open Sans';font-size:13px;color:white">User Name:</span>
+                                        <input type="text" name="name" class="form-control" id="Uname" onchange="Clearlabels()" placeholder="User Name" required data-bs-toggle='tooltip' title="Please fill out this field">
+                                        <label id="lblUname" style="display:none" class="errorClass">Please Enter User Name</label>
+                                        <label id="lblsignupuserName" style="display:none" class="errorClass">Username should not contain links or sites</label>
+
+                                    </div>
+                                    <div class="form-group mx-4 mt-2">
+                                        <span style="font-family:'Open Sans';font-size:13px;color:white">Password:</span>
+                                        <input type="password" name="password" class="form-control" id="Upassword" onchange="Clearlabels()" placeholder="Password" required data-bs-toggle='tooltip' title="Please fill out this field">
+                                        <label id="lblUpwd" style="display:none" class="errorClass">Please Enter Password</label>
+                                        <label id="lblsignpwd" style="display:none" class="errorClass">Password must contain minimum 8 characters</label>
+                                    </div>
+                                    <div class="d-flex justify-content-between mx-4  mt-2">
+                                        <div class="d-flex">
+                                            <button type="button" class="btn btn-warning mt-1" onclick="UserSignUp()"><label class="ml-2" style="font-family:'Open Sans';font-size:14px;">Sign Up</label>  </button><img id="loading-signupids" style="height:20px; width:20px; margin-top:10px" class="loading-image" src="Images/loading-buffering.gif" alt="Loading..." />
+                                        </div>
+                                        <div class="login_center_text mx-0" style="margin-top: 10px;">
+                                            <p style="padding-top:14px; font-size:14px;font-family:'Open Sans'" class="text-white text-center">Already Registered?   <a href="javascript:void()" id="SignUpLoginLink"><span class="text-warning">Login</span></a></p>
+                                        </div>
+
+                                    </div>
+
+
+                                </form>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="login_img">
+                                    <img src="assets/img/login_side_img.png" class="img-fluid" style="height: 450px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- End Pricing Section -->
+    <!-- ======= Footer ======= -->
+
+    <footer id="footer">
+
+        <div class="container border-top">
+            <p class="mt-5 text-white">Environment Agency – Abu Dhabi © 2021</p>
+            <div class="social-links mt-5">
+                <a href="https://twitter.com/EADTweets" class="twitter" target="_blank" data-bs-toggle='tooltip' title="Twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.facebook.com/EnvironmentAbuDhabi/" class="facebook" data-bs-toggle='tooltip' title="Facebook" target="_blank"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.linkedin.com/company/environment-agency-abu-dhabi" class="linkedin" target="_blank" data-bs-toggle='tooltip' title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+
+
+    <script>
+        $(document).ready(function () {
+
+            //// Trigger reCAPTCHA when the form is submitted
+            //document.getElementById("myForm").addEventListener("submit", function (event) {
+            //    event.preventDefault(); // Prevent the default form submission
+
+            //    grecaptcha.ready(function () {
+            //        grecaptcha.execute("6LfkkbMqAAAAABdtF1Rq2E2OVjhN27c6IYRxke9y", { action: "submit" }).then(function (token) {
+            //            // Add the token to the form
+            //            var input = document.createElement("input");
+            //            input.type = "hidden";
+            //            input.name = "g-recaptcha-response";
+            //            input.value = token;
+            //            document.getElementById("myForm").appendChild(input);
+
+            //            // Submit the form programmatically
+            //            document.getElementById("myForm").submit();
+            //        });
+            //    });
+            //});
+
+
+            if (localStorage.getItem('RedirectHomepage') == 'True') {
+                $("#lblBackToApplication").css("display", "block");
+                //$("#LoginBack").css("display", "block")
+                $("#Login").css("display", "none")
+                $(".HeaderLogin").css("display", "none");
+                //$("#UserName").prop('disabled', true);
+                //$("#UserPwd").prop('disabled', true);
+            }
+            else {
+                $("#lblBackToApplication").css("display", "none");
+                $(".HeaderLogin").css("display", "block");
+                //$("#UserName").prop('disabled', false);
+                //$("#UserPwd").prop('disabled', false);
+                // $("#LoginBack").css("display", "none")
+            }
+
+            if (localStorage.chkbx && localStorage.chkbx != '') {
+                $("#chkRememberMe").attr('checked', 'checked');
+                $("#UserName").val(localStorage.username);
+                $("#UserPwd").val(localStorage.pass);
+            } else {
+                $("#chkRememberMe").removeAttr('checked');
+                $("#UserName").val('');
+                $("#UserPwd").val('');
+            }
+
+
+
+        });
+
+        var customizeForDevice = function () {
+            var ua = navigator.userAgent;
+
+            var checker = {
+                iphone: ua.match(/BirdTracking_Ios/),
+                blackberry: ua.match(/BlackBerry/),
+                android: ua.match(/BirdTracking_Android/)
+            };
+            if (checker.android == null && checker.iphone == null && checker.blackberry == null) {
+                $('.LanguageBut').css('display', 'block');
+                return;
+            }
+            else if (checker.android) {
+                $('.LanguageBut').css('display', 'none');
+                return;
+            }
+            else if (checker.iphone) {
+                $('.LanguageBut').css('display', 'none');
+                return;
+            }
+            else {
+                $('.LanguageBut').css('display', 'block');
+            }
+        }
+        customizeForDevice();
+
+        function AlertMessages(status, title, text) {
+            if (status == "success") {
+                Swal.fire({
+                    icon: 'success',
+                    title: title,
+                    text: text,
+
+                })
+            }
+            else if (status == "error") {
+                Swal.fire({
+                    icon: 'error',
+                    title: title,
+                    text: text,
+
+                })
+            }
+            else if (status == "warning") {
+                Swal.fire({
+                    icon: 'warning',
+                    title: title,
+                    text: text,
+
+                })
+            }
+
+        };
+        function openNav(birdname) {
+            $("#divBirdInfo").empty();
+            $("#imgBird").attr("src", "");
+            var birdID = birdname.split(' ').join('');
+            $("#imgBird").attr("src", "assets/img/" + birdID + ".jpg");
+            $("#divBirdInfo").append('<h1 style="color:white; text-decoration:double" class="Details-title">' + birdname + '</h1>');
+            $("#divBirdInfo").append('<span>' + configOptions.BirdsData[birdID].Desc + '</span>')
+            document.getElementById("myNav").style.left = "0%";
+        }
+        $(".toggle-password").click(function () {
+
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+
+        function closeNav() {
+            document.getElementById("myNav").style.left = "-100%";
+        }
+
+        $("#lblBackToApplication").click(function () {
+            if ($('#lblLanguage').text() == "English") {
+                location.href = 'index.html?ar';
+                localStorage.setItem('isArabicPage', 'True');
+            }
+            else {
+                location.href = 'index.html';
+                localStorage.setItem('isArabicPage', 'False');
+            }
+
+        });
+
+        $("#chkRememberMe").click(function () {
+
+            if ($("#chkRememberMe").is(':checked')) {
+                localStorage.username = $("#UserName").val();
+                localStorage.pass = $("#UserPwd").val();
+                localStorage.chkbx = $("#chkRememberMe").val();
+            } else {
+                localStorage.username = '';
+                localStorage.pass = '';
+                localStorage.chkbx = '';
+            }
+        });
+
+        $('#lblLanguage').click(function () {
+            if ($('#lblLanguage').text() == "عربي") {
+                location.href = 'Home_Ar.html';
+            }
+            else if ($('#lblLanguage').text() == "English") {
+                location.href = 'Home.html'
+            }
+        });
+
+        function resetregistercontrols() {
+            var currentWidget = this;
+            $('#Uname').val("");
+            $('#Upassword').val("");
+            $('#Uemail').val("");
+
+        }
+        function forgotpwd() {
+            $('#lblemail').css("display", "none");
+        }
+        function SubmitForgotPwd() {
+            try {
+                var currentWidget = this;
+                $('#lblemail').css("display", "none");
+                var emailReg = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                var email = $('#email').val();
+
+
+                var formIsValid = true;
+                if (!emailReg.test(email) || email == "") {
+                    $('#lblemail').css("display", "block");
+                    formIsValid = false;
+                }
+                else {
+                    $('#lblemail').css("display", "none");
+                }
+                if (formIsValid == false) {
+                    return;
+
+                }
+                $("#loading-FPwdids").fadeIn();
+                var Email = $('#email').val();
+
+                var requestData = {
+                    email: Email
+                };
+                var url = configOptions.ServiceUrl + 'JsonForgotPassword/';
+                $.ajax({
+                    url: url,
+                    type: 'POST',  // http method
+                    crossDomain: true,
+                    contentType: 'application/json',
+                    data: JSON.stringify(requestData),
+                    success: function (result) {
+                        var jsonObj = JSON.parse(result);
+                        if (jsonObj.status == true) {
+                            AlertMessages("success", '', jsonObj.message);
+                        }
+                        else {
+                            AlertMessages("warning", '', jsonObj.message);
+                        }
+                        $('#email').val("");
+                        $("#loading-FPwdids").fadeOut();
+                    },
+                    error: function (xhr, error) {
+                        $('#email').val("");
+                    },
+                });
+
+            }
+            catch (e) {
+                console.log(e);
+                $('#email').val("");
+            }
+        }
+        function ClearLoginLabels() {
+            $("#lblusername").css("display", "none");
+            $("#lblPassWord").css("display", "none");
+        }
+
+        //function CheckLoginUser() {
+        //    try {
+        //        var formIsValid = true;
+        //        var UserName = $("#UserName").val();
+        //        var password = $("#UserPwd").val();
+        //        var tokenValue = "";
+
+        //        if (UserName == "") {
+        //            $("#lblusername").css("display", "block");
+        //            formIsValid = false;
+        //        }
+        //        else {
+        //            $("#lblusername").css("display", "none");
+        //        }
+        //        if (password == "") {
+        //            $("#lblPassWord").css("display", "block");
+        //            formIsValid = false;
+        //        }
+        //        else {
+        //            $("#lblPassWord").css("display", "none");
+        //        }
+
+        //        if (formIsValid == false)
+        //            return;
+
+        //        $("#loading-image").show();
+
+        //        grecaptcha.ready(function () {
+        //            grecaptcha.execute('6LeNH7YqAAAAAAE7SvcIRTbfsPMEL1efYdPqKdgh', { action: 'login' }).then(function (token) {
+        //                // Add the token to the request
+        //                var requestData = {
+        //                    login: UserName,
+        //                    password: password,
+        //                    token: token
+        //                };
+        //                var url = configOptions.ServiceUrl + 'checkuser/';
+
+        //                $.ajax({
+        //                    url: url,
+        //                    type: 'POST',
+        //                    crossDomain: true,
+        //                    contentType: 'application/json',
+        //                    data: JSON.stringify(requestData),
+        //                    success: function (result) {
+        //                        var resInfo = result.split("|");
+        //                        if (resInfo.length > 0) {
+        //                            if (resInfo[0] == 'No Access') {
+        //                                AlertMessages('error', 'No Access', resInfo[1].substr(0, resInfo[1].length - 1));
+        //                            } else {
+        //                                configOptions.UserInfo.UserName = resInfo[1];
+        //                                configOptions.UserInfo.UserRole = resInfo[0];
+        //                                configOptions.UserInfo.Password = $("#UserPwd").val();
+        //                                localStorage.loggedInUserName = resInfo[1];
+        //                                localStorage.loggedInRole = resInfo[0];
+        //                                localStorage.Password = $("#UserPwd").val();
+
+        //                                localStorage.setItem('isUserLogged', 'True');
+
+        //                                if ($('#lblLanguage').text() == "English") {
+        //                                    if (resInfo[0].toUpperCase() == "PUBLIC") {
+        //                                        location.href = 'publicuser.html?ar';
+        //                                    } else {
+        //                                        location.href = 'index.html?ar';
+        //                                    }
+        //                                    localStorage.setItem('isArabicPage', 'True');
+        //                                } else {
+        //                                    if (resInfo[0].toUpperCase() == "PUBLIC") {
+        //                                        location.href = 'publicuser.html';
+        //                                    } else {
+        //                                        location.href = 'index.html';
+        //                                    }
+        //                                    localStorage.setItem('isArabicPage', 'False');
+        //                                }
+        //                            }
+        //                            $("#loading-image").hide();
+        //                        }
+        //                    },
+        //                    error: function (xhr, error) {
+        //                        console.debug(xhr);
+        //                        console.debug(error);
+        //                    }
+        //                });
+        //            });
+        //        });
+        //    }
+        //    catch (e) {
+        //        console.log(e);
+        //    }
+        //}
+
+        //async function hashPassword(password) {
+        //    const encoder = new TextEncoder();
+        //    const data = encoder.encode(password);
+        //    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        //    const hashArray = Array.from(new Uint8Array(hashBuffer));
+        //    const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+        //    return hashHex;
+        //}
+
+        function CheckLoginUser() {
+
+          
+
+            try {
+
+                var formIsValid = true;
+
+                var UserName = $("#UserName").val();
+
+
+
+                var password = $("#UserPwd").val();
+
+                if (UserName == "") {
+
+                    $("#lblusername").css("display", "block");
+
+                    formIsValid = false;
+
+                }
+
+                else {
+
+                    $("#lblusername").css("display", "none");
+
+                }
+
+                if (password == "") {
+
+                    $("#lblPassWord").css("display", "block");
+
+                    formIsValid = false;
+
+                }
+
+                else {
+                    $("#lblPassWord").css("display", "none");
+                    }
+
+                
+
+                if (formIsValid == false)
+
+                    return;
+
+                var encryptedPassword = CryptoJS.SHA256(password).toString(CryptoJS.enc.Base64); 
+
+                $("#loading-image").show();
+
+
+
+                //var baseServiceUrl = configOptions.ServiceUrl;
+
+                //var login = UserName; 
+
+                //var password1 = password;
+
+                //var url = `${baseServiceUrl}checkuser/${login}/${password1}`;
+
+                var url = configOptions.ServiceUrl + 'checkuser/';
+
+                var requestData = {
+
+                    login: UserName,
+
+                    password: encryptedPassword
+
+                };
+
+                $.ajax({
+
+                    url: url,
+
+                    type: 'POST',  // http method
+
+                    crossDomain: true,
+
+                    contentType: 'application/json',
+
+                    data: JSON.stringify(requestData),
+
+                    success: function (result) {
+
+                        //var jsonobj = JSON.parse(result.CheckUserResult);
+
+                        var resInfo = result.split("|");
+
+                        if (resInfo.length > 0) {
+
+                            if (resInfo[0] == 'No Access') {
+
+                                AlertMessages('error', 'No Access', resInfo[1].substr(0, resInfo[1].length - 1));
+
+                            }
+
+                            else {
+
+                                configOptions.UserInfo.UserName = resInfo[1];
+
+                                configOptions.UserInfo.UserRole = resInfo[0];
+
+                                configOptions.UserInfo.Password = $("#UserPwd").val();
+
+                                localStorage.loggedInUserName = resInfo[1];
+                                localStorage.loggedInRole = resInfo[0];
+                                localStorage.setItem('token', resInfo[2]);
+                                localStorage.setItem('refreshtoken', resInfo[3]);
+                                localStorage.Password = $("#UserPwd").val()
+                                localStorage.setItem('isUserLogged', 'True');
+
+                                if ($('#lblLanguage').text() == "English") {
+
+                                    if (resInfo[0].toUpperCase() == "PUBLIC") {
+
+                                        location.href = 'publicuser.html?ar'
+
+                                    }
+
+                                    else {
+
+                                        location.href = 'index.html?ar';
+
+                                    }
+
+                                    localStorage.setItem('isArabicPage', 'True');
+
+                                }
+
+                                else {
+
+                                    if (resInfo[0].toUpperCase() == "PUBLIC") {
+
+                                        location.href = 'publicuser.html'
+
+                                    }
+
+                                    else {
+
+                                        location.href = 'index.html'
+
+                                    }
+
+                                    localStorage.setItem('isArabicPage', 'False');
+
+                                }
+
+                            }
+
+                            //$("#loading-image").css("display", "none");
+
+                            $("#loading-image").hide();
+
+                        }
+
+
+                    },
+
+                    error: function (xhr, error) {
+
+                        console.debug(xhr); console.debug(error);
+
+                    },
+
+                });
+
+            }
+
+            catch (e) {
+
+                console.log(e);
+
+            }
+
+        }
+
+
+
+        function Clearlabels() {
+            $('#lblUname').css("display", "none");
+            $('#lblUpwd').css("display", "none");
+            $('#lblUemail').css("display", "none");
+            $('#lblsignpwd').css("display", "none");
+            $('#lblsignupuserName').css("display", "none");
+        }
+        function UserSignUp() {
+
+            try {
+                var formIsValid = true;
+                var Role;
+                var isverified;
+                var UserName = $('#Uname').val();
+                var password = $('#Upassword').val();
+                var email = $('#Uemail').val();
+                $('#lblUname').css("display", "none");
+                $('#lblUpwd').css("display", "none");
+                $('#lblUemail').css("display", "none");
+                $('#lblsignpwd').css("display", "none");
+                $('#lblsignupuserName').css("display", "none");
+
+                Role = "Public";
+                isverified = "0";
+                var letters = /"(www\.|http:\/\/|https:\/\/)"/;
+
+                var Phonenumber = null;
+                //var emailReg = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                var emailReg = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+                //var passwordletters = /^(?=.*\d)(?=.*[a-z]).{6,20}$/;
+
+               
+                if (UserName == "") {
+                    $('#lblUname').css("display", "block");
+                    $('#lblsignupuserName').css("display", "none");
+                    formIsValid = false;
+                }
+                if ((UserName.match(letters))) {
+                    $('#lblUname').css("display", "none");
+                    $('#lblsignupuserName').css("display", "block");
+                    formIsValid = false;
+                }
+                //if (!(password.match(passwordletters))) {
+                //    $('#lblUpwd').css("display", "none");
+                //    $('#lblsignpwd').css("display", "block");
+                //    formIsValid = false;
+                //}
+                if (password == "") {
+                    $('#lblUpwd').css("display", "block");
+                    $('#lblsignpwd').css("display", "none");
+                    formIsValid = false;
+                }
+
+                if (password.length < 8) {
+                    $('#lblUpwd').css("display", "none");
+                    $('#lblsignpwd').css("display", "block");
+                    formIsValid = false;
+                }
+                if (!emailReg.test(email) || email == "") {
+                    $('#lblUemail').css("display", "block");
+                    formIsValid = false;
+                }
+
+                if (formIsValid == false) {
+                    return;
+                }
+                $("#loading-signupids").show();
+                var assignedids = "";
+                var sensorTypeids = "";
+                var requestData = {
+                    GroupName: "Public"
+                };
+                var url = configOptions.ServiceUrl + 'JsonGetGroupAssignedIDs/';
+                var encryptedPassword = CryptoJS.SHA256(password).toString(CryptoJS.enc.Base64); 
+                $.ajax({
+                    url: url,
+                    type: 'POST',  // http method
+                    crossDomain: true,
+                    contentType: 'application/json',
+                    data: JSON.stringify(requestData),
+                    success: function (result) {
+                        var jsonObj = JSON.parse(result);
+                        if (jsonObj.Table1.length > 0) {
+                            assignedids = jsonObj.Table1[0].AssignIDs;
+                            sensorTypeids = jsonObj.Table1[0].SensorType;
+                        }
+                        //grecaptcha.ready(function () {
+                        //    grecaptcha.execute('6LeNH7YqAAAAAAE7SvcIRTbfsPMEL1efYdPqKdgh', { action: 'login' }).then(function (token) {
+                                var requestData = {
+                                    login: UserName,
+                                    password: encryptedPassword,
+                                    email: email,
+                                    Role: Role,
+                                    Phoneno: Phonenumber,
+                                    isVerified: isverified,
+                                    AssignBirds: assignedids,
+                                    SensorType: sensorTypeids,
+                                    //token: token
+                                };
+                                var url = configOptions.ServiceUrl + 'JsonRegisteredUser/';
+                                $.ajax({
+                                    url: url,
+                                    type: 'POST',  // http method
+                                    crossDomain: true,
+                                    contentType: 'application/json',
+                                    data: JSON.stringify(requestData),
+                                    success: function (result) {
+                                        var jsonObj = JSON.parse(result);
+                                        if (jsonObj.status == true) {
+                                            AlertMessages("success", '', jsonObj.message);
+                                        }
+                                        else {
+                                            AlertMessages("warning", '', jsonObj.message);
+                                        }
+                                        resetregistercontrols();
+                                        $("#loading-signupids").css("display", "none");
+                                        $("#loading-signupids").hide();
+                                    },
+                                    error: function (xhr, error) {
+                                        resetregistercontrols();
+                                        console.debug(xhr); console.debug(error);
+                                    },
+
+                            //    });
+
+                            //});
+                        });
+                    },
+                    error: function (xhr, error) {
+                        console.debug(xhr); console.debug(error);
+                    },
+
+                });
+            }
+            catch (e) {
+                console.log(e);
+            }
+        }
+
+
+        $(document).ready(function () {
+            $("#SignupLink").click(function () {
+                $("#LoginDiv").hide();
+                $("#SignupDiv").show();
+                $("#FPwdDiv").hide();
+                $("#Uemail").val("");
+                $("#Uname").val("");
+                $("#Upassword").val("");
+                $("#lblUemail").css("display", "none");
+                $("#lblUname").css("display", "none");
+                $("#lblsignupuserName").css("display", "none");
+                $("#lblUpwd").css("display", "none");
+                $("#lblsignpwd").css("display", "none");
+                event.stopPropagation();
+
+            });
+
+            $("#LoginLink").click(function () {
+                $("#LoginDiv").show();
+                $("#SignupDiv").hide();
+                $("#FPwdDiv").hide();
+                event.stopPropagation();
+
+            });
+            $("#SignUpLoginLink").click(function () {
+                $("#LoginDiv").show();
+                $("#SignupDiv").hide();
+                $("#FPwdDiv").hide();
+
+
+                event.stopPropagation();
+
+            });
+            $(".HeaderLogin").click(function () {
+                $("#LoginDiv").show();
+                $("#SignupDiv").hide();
+                $("#FPwdDiv").hide();
+
+
+                event.stopPropagation();
+            });
+
+
+            $("#FPWDLink").click(function () {
+                $("#LoginDiv").hide();
+                $("#SignupDiv").hide();
+                $("#FPwdDiv").show();
+                $('#email').val("");
+                $('#lblemail').css("display", "none");
+                event.stopPropagation();
+            });
+        });
+
+
+
+
+    </script>
+
+</body>
+
+</html>

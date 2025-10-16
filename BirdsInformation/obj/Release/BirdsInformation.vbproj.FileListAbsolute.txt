@@ -1,0 +1,4 @@
+D:\BirdTracking_2023\EAD_BirdTracking\Main\Source\BirdsInformation\BirdsInformation\obj\Release\BirdsInformation.vbproj.AssemblyReference.cache
+D:\BirdTracking_2023\EAD_BirdTracking\Main\Source\BirdsInformation\BirdsInformation\obj\Release\BirdsInformation.Resources.resources
+D:\BirdTracking_2023\EAD_BirdTracking\Main\Source\BirdsInformation\BirdsInformation\obj\Release\BirdsInformation.vbproj.GenerateResource.cache
+D:\BirdTracking_2023\EAD_BirdTracking\Main\Source\BirdsInformation\BirdsInformation\obj\Release\BirdsInformation.vbproj.CoreCompileInputs.cache

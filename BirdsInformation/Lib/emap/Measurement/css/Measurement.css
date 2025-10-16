@@ -1,0 +1,90 @@
+﻿.calcite .esriMeasurement .esriToggleButton .dijitButtonContents > * {
+    display: table-cell !important;
+}
+.calcite .esriMeasurement .esriToggleButton .dijitButtonText {
+    width: 100% !important;
+    padding: 5px 10px !important;
+}
+.calcite .esriMeasurement .esriToggleButton .dijitButtonContents {
+    display: table !important;
+    width: 100% !important;
+    padding: 0 !important;
+}
+.calcite .esriMeasurement .dijitButtonNode {
+    width: 100% !important;
+}
+.calcite .dijitButtonNode, .calcite .dijitSliderDecrementIconH, .calcite .dijitSliderIncrementIconH, .calcite .dijitSliderDecrementIconV, .calcite .dijitSliderIncrementIconV {
+    touch-action: manipulation;
+    cursor: pointer;
+    border: 1 px solid transparent;
+    white-space: nowrap;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    color: #4c4c4c;
+    background-color: #fff;
+    -moz-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+    border-color: #e0e0e0 !important;
+}
+/*.claro .dijitButtonText
+{
+    font-size:21px;
+    color:red;
+}
+
+.esriMeasurementResultValue:before {*/
+  /*content: "Measure Result-1:";*/
+/*}*/
+
+/*.esriMeasurementButtonPane::after{
+    content:"1mt = 3.28 Ft || 1 ha = 10000 Sq mt || 1 Acre = 4046.9 Sq mt";
+        font-weight:bold;
+        padding:10px;
+        padding-left:40px;
+       color:navy;
+       
+}*/
+/*.esriMeasurementResultValue.LengthResultPrefix:before {
+  content: "Total Distance: ";
+  font-weight:bold;
+}
+.esriMeasurementResultValue.AreaResultPrefix:before {
+  content: "Area: ";
+  font-weight:bold;
+}
+#MeasureDiv
+{
+    padding-bottom:10px;
+}*/
+/*.esriMeasurementResultValue.PointResult:before {
+  content: "Coordinates:";
+}*/
+
+/*.esriMeasurementResultTable tr:FIRST-CHILD + tr{
+    display:none;
+}*/
+
+/*#dijit_Menu_2 .tr:nth-child(2) {
+display:none;
+}*/
+
+body {
+    background-color: #FFF;
+    overflow: hidden;
+    font-family: "Trebuchet MS";
+}
+#titlePane {
+    width: 280px;
+}
+.esriMeasurement .esriMeasurementResultValue {
+    color: black !important;
+}
+
+
+
+
+

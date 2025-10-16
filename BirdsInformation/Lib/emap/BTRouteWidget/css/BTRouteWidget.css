@@ -1,0 +1,87 @@
+﻿#footer {
+    top: auto !important;
+    bottom: 0px !important;
+}
+
+table.dataTable thead .sorting {
+    background-color: #ffffff;
+    font-weight: bold;
+}
+.tabStripButton {
+    display: none;
+}
+ui-icon dgrid-hider-toggle
+{
+    display:none;
+}
+.dojoxGridPaginator {
+    height: 30px !important;
+    width:100% !important;
+}
+.dojoxGridView {
+    font-family: 'Open Sans';
+    font-size: 11px;
+}
+.dojoxGrid {
+    /*height: 30px !important;*/
+    width: 100% !important;
+    font-family: 'Open Sans';
+    font-size: 11px;
+}
+/*.dijitLayoutContainer {
+    position: absolute !important;
+    display: block;*/
+/*overflow: hidden;*/
+/*}*/
+/*.dijitTabPaneWrapper {
+
+    height:200px !important;
+}*/
+/*.DynamicDiv{
+    height:200px !important;
+    width:auto;
+}*/
+.dgrid-cell {
+    font-size: 11px;
+}
+
+.dgrid-header-row {
+    z-index: 9999 !important
+}
+.dgrid-scroller {
+    margin-top: 35px !important;
+}
+.dijitTab .tabLabel {
+    padding: 8px 20px;
+    color: #0a0a0a;
+    background-color: #cdcccc;
+    font-size: 11px;
+}
+.dijitTab .tabLabel .active {
+       background-color:#F46239 !important;
+ }
+
+    .dijitTabContainerTop-tabs .dijitTab{
+    padding-right:3px;
+    border-start-end-radius:10px;
+}
+.dgrid-hider-toggle{
+    display:none;
+}
+
+.dijitTabPaneWrapper {
+    top:0px !important;
+    height:100% !important;
+    width:100% !important;
+
+}
+
+    .dijitTabPaneWrapper > div {
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+
+    .dijitTab .tabLabel .active {
+        background-color: #ff0000 !important;
+    }

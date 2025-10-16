@@ -1,0 +1,401 @@
+﻿<div data-dojo-attach-point="DivBirdRecord">
+    <a href="#" class="CloseContainer" data-bs-toggle="tooltip" title="${_i18n.Close}"><i class="far fa-times-circle"></i></a>
+    <div class="container">
+        <h4 class="SubHeading">${_i18n.BirdsInfo}</h4>
+        <div class="card border-0 p-0 mt-5">
+            <div class="card-body p-0 d-flex">
+                <div class="col-md-6 col-xs-12 ">
+                    <div class="form-group m-0 d-flex">
+                        <div class="form-group PlatformIDsSec">
+                            <select class="form-control SearchInput" name="Platformids" data-dojo-attach-point="Searchbirdid" placeholder="${_i18n.EnterPlatformID}"></select>
+                            <!--<input type="search" class="form-control SearchInput" data-dojo-attach-point="Searchbirdid" placeholder="Enter Platform ID" style="float:left">-->
+                            <small data-dojo-attach-point="lblmessage" class="errorClass" style="display:none">${_i18n.PleaseEnterPlatformID}</small>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-secondary" data-dojo-attach-point="SearchRec"><i class="fas fa-search"></i></button><br />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6 col-xs-12 lt2rt  text-right">
+                    <button class="btn btn-primary m-0" data-dojo-attach-point="AddBirdBut">${_i18n.AddBird}</button>
+                </div>
+            </div>
+            <div class="card BirdInfoCard mt-3" data-dojo-attach-point="ViewResDiv">
+                <div class="card-header" data-dojo-attach-point="ViewPTTID"></div>
+                <div class="card-body">
+                    <div class="row">
+
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.Species}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewSpecies"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.BirdName} :</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewBirdName"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.PlatformWeight} (g):</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewPTTweight"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.SensorType}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="Viewtype"></label>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.Weight} (g):</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewWeight"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.Wings} (mm):</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewWings"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.Site}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewSite"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.Age}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewAge"></label>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.Sex}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewSex"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.Bill} (mm):</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewBill"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.Tarsus} (mm):</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewTarsus"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.BandID}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewBandID"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.CaptureDate}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewCaptureDate"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.CaptureTime}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewCapTime"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.RelDate}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewRelDate"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.RelTime}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewRelTime"></label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        
+
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.LastActiveDate}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewActiveLastDate"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.PurchaseYear}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewPurchaseYear"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.Latitude}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewLatitude"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.Longitude}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewLongitude"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.Status}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewStatus"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.Migration}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewMigration"></label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-xs-12 ">
+                            <label>${_i18n.Notes}:</label>
+                            <div class="CardRecord">
+                                <label class="birdinfolabel" data-dojo-attach-point="ViewNotes"></label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer"><button type="button" data-dojo-attach-point="editbirddetails" class="btn btn-primary">${_i18n.EditUpdate}</button></div>
+            </div>
+
+
+
+
+
+            <div class="card BirdInfoCard mt-3" data-dojo-attach-point="AddBirdDiv">
+                <div class="card-header" data-dojo-attach-point="AddHeading">${_i18n.AddBird}</div>
+                <div class="card-header" style="display:none" data-dojo-attach-point="UpdateHeading">${_i18n.UpdateBird}</div>
+                <div class="card-body" style="padding-bottom:0px;">
+                    <label data-dojo-attach-point="mandatory" class="errorClass" style="display:none"> * ${_i18n.MarkedFeildsareMandatory}</label>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-xs-12 ">
+                            <div class="form-group">
+                                <label>${_i18n.PlatformID}<span class="required">*</span></label>
+                                <input aria-describedby="required-description" type="number" onkeypress="return event.charCode >= 48" min="1"
+                                       data-dojo-attach-event="onchange:CheckPlatformID" class="form-control" placeholder="${_i18n.EnterPlatformID}" data-dojo-attach-point="biPTTID">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Species}<span class="required">*</span></label>
+                                <select aria-describedby="required-description" class="form-control" placeholder="${_i18n.SelectSpecies}" data-dojo-attach-point="biSpecies">
+                                    <option>Select Species</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.BirdName}<span class="required">*</span></label>
+                                <input type="text" class="form-control" placeholder="${_i18n.EnterBirdName}" data-dojo-attach-point="biBirdName" data-dojo-attach-event="onchange:CheckBirdNameStatus">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.PlatformWeight} (g)</label>
+                                <input type="number" class="form-control" onkeypress="return event.charCode >= 48" min="1" max="200" placeholder="${_i18n.EnterWeight}" data-dojo-attach-point="biPTTweight">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>${_i18n.SensorType}<span class="required">*</span></label>
+                                        <select aria-describedby="required-description" data-dojo-attach-point="bitype" class="form-control" placeholder="${_i18n.SelectType}" data-dojo-attach-event="onchange:ChangeSensorType">
+                                            required>
+                                            <option class="invalid" value="" disabled selected></option>
+                                            <option value="Argos">${_i18n.Argos}</option>
+                                            <option value="GPS">${_i18n.GPS}</option>
+                                            <option value="GSM">${_i18n.GSM} </option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>${_i18n.SeconadrySensorType}</label>
+                                        <select aria-describedby="required-description" data-dojo-attach-point="bisecondarytype" class="form-control" placeholder="${_i18n.SelectType}">
+                                            required>
+                                            <option class="invalid" value="" disabled selected></option>
+                                            <option value="Argos">${_i18n.Argos}</option>
+                                            <option value="GPS">${_i18n.GPS}</option>
+                                            <!--<option value="GSM">${_i18n.GSM} </option>-->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Weight} (g)<span class="required">*</span></label>
+                                <input aria-describedby="required-description" type="number" onkeypress="return event.charCode >= 48" min="1" max="200" class="form-control" placeholder="${_i18n.EnterWeight}" data-dojo-attach-point="biWeight">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Wings} (mm)</label>
+                                <input type="number" class="form-control" onkeypress="return event.charCode >= 48" min="1" max="200" placeholder="${_i18n.EnterWings}" data-dojo-attach-point="biWings">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Age}<span class="required">*</span></label>
+                                <select aria-describedby="required-description" class="form-control" onkeypress="return event.charCode >= 48" min="1" max="200" data-dojo-attach-point="biAge" required placeholder="${_i18n.SelectAge}"></select>
+                                <!--<input type="number" class="form-control" placeholder="Enter Email" data-dojo-attach-point="biAge">-->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Sex}<span class="required">*</span></label>
+                                <select aria-describedby="required-description" class="form-control" placeholder="${_i18n.SelectSex}" data-dojo-attach-point="biSex">
+                                    <option>Select Sex</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Bill} (mm)</label>
+                                <input type="number" class="form-control" placeholder="${_i18n.EnterBill}" onkeypress="return event.charCode >= 48" min="1" max="200" data-dojo-attach-point="biBill">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Tarsus} (mm)</label>
+                                <input type="number" class="form-control" placeholder="${_i18n.EnterTarsus}" onkeypress="return event.charCode >= 48" min="1" max="200" data-dojo-attach-point="biTarsus">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.BandID}</label>
+                                <input type="text" class="form-control" placeholder="${_i18n.EnterBandID}" data-dojo-attach-point="biBandID">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Site}</label>
+                                <select aria-describedby="required-description" class="form-control" placeholder="${_i18n.Selectsite}" data-dojo-attach-point="biSite">
+                                    <option>Select Site</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.CaptureDate}<span class="required">*</span></label>
+                                <input type="text" data-date-format="dd-mm-yyyy" data-dojo-attach-point="biCaptureDate" class="form-control dateclass" placeholder="${_i18n.EnterCaptureDate}" data-auto-close="true" readonly="readonly" />
+                                <!--<input aria-describedby="required-description" type="date" class="form-control" placeholder="${_i18n.EnterCaptureDate}" data-dojo-attach-point="biCaptureDate">-->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.CaptureTime}</label>
+                                <input aria-describedby="required-description" type="time" class="form-control" placeholder="${_i18n.EnterCaptureTime}" data-dojo-attach-point="biCapTime">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.RelDate}<span class="required">*</span></label>
+                                <input type="text" data-date-format="dd-mm-yyyy" data-dojo-attach-point="biRelDate" 
+                                       class="form-control dateclass" placeholder="${_i18n.EnterReleaseDate}">
+                                <!--<input aria-describedby="required-description" type="date" class="form-control" placeholder="${_i18n.EnterDate}" data-dojo-attach-point="biRelDate">-->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.RelTime}<span class="required">*</span></label>
+                                <input aria-describedby="required-description" type="time" class="form-control" placeholder="${_i18n.EnterTime}" data-dojo-attach-point="biRelTime">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Lastactivedate}</label>
+                                <input type="text" data-date-format="dd-mm-yyyy" data-dojo-attach-point="biActiveLastDate" class="form-control dateclass"
+                                       placeholder="${_i18n.EnterActiveDate}" data-auto-close="true" readonly="readonly" />
+                                <!--<input type="date" class="form-control" placeholder="${_i18n.EnterActiveDate}" data-dojo-attach-point="biActiveLastDate">-->
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Purchaseyear}</label>
+                                <input type="number" onkeypress="return event.charCode >= 48" min="4" max="4" class="form-control" placeholder="${_i18n.EnterYear}" 
+                                       minlength="4" maxlength="4" pattern="[1-9]{1}[0-9]{3}" data-dojo-attach-event="onchange:getPurchaseYear" data-dojo-attach-point="biPurchageyear" title="${_i18n.FutureYearsarenotallowed}">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Latitude}<span class="required">*</span></label>
+                                <input type="number" class="form-control" placeholder="${_i18n.EnterLatitude}" data-dojo-attach-point="biLatitude"  data-dojo-attach-event="onchange:getLatitude" onkeydown="javascript: return event.keyCode == 69 ? false : true">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Longitude}<span class="required">*</span></label>
+                                <input type="number" class="form-control" placeholder="${_i18n.EnterLongtitude}" data-dojo-attach-point="biLongitude" data-dojo-attach-event="onchange:getLongitude" onkeydown="javascript: return event.keyCode == 69 ? false : true">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Status}</label>
+                                <select aria-describedby="required-description" class="form-control" placeholder="${_i18n.SelectStatus}" data-dojo-attach-point="biStatus">
+                                    <!-- <option class="invalid" value="" disabled selected></option>-->
+                                    <option value="AC" selected>${_i18n.AC}</option>
+                                    <option value="NA">${_i18n.NA}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Migration} <span class="required">*</span></label>
+                                <select aria-describedby="required-description" class="form-control" placeholder="${_i18n.SelectMigration}" data-dojo-attach-point="biMigration">
+                                    <option value=""></option>
+                                    <option value="M" selected>${_i18n.Migration}</option>
+                                    <option value="R">${_i18n.Residential}</option>
+                                    <option value="D">${_i18n.Dispersal}</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-xs-12">
+                            <div class="form-group">
+                                <label>${_i18n.Notes}</label>
+                                <textarea name="message" class="form-control" placeholder="${_i18n.EnterNotes}" data-dojo-attach-point="biNotes" rows="10" cols="30" style="height: 55px;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer"><button type="button" data-dojo-attach-point="savebirddata" class="btn btn-primary">${_i18n.SaveandUpdate}</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+

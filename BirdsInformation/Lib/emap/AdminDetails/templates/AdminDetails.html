@@ -1,0 +1,81 @@
+﻿<div data-dojo-attach-point="DivAdminData">
+
+    <a href="javascript:void()" data-bs-toggle="tooltip" title="${_i18n.Close}" class="CloseContainer"><i class="far fa-times-circle"></i></a>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6 col-xs-12 ">
+                <h4 class="SubHeading">${_i18n.ManageUsers}</h4>
+            </div>
+            <div class="col-md-6 col-xs-12 lt2rt  text-right">
+                <button class="btn btn-primary m-0" data-dojo-attach-point="AddUserBut">${_i18n.CreateSponser}</button>
+            </div>
+
+        </div>
+        <div style="overflow-x:auto;">
+            <table class="table table-striped BtisTableFull mt-3" cellpadding="0" cellspacing="0" border="0" data-dojo-attach-point="UsersTable" style="width:100%">
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="card BirdInfoCard mt-3 divsponsorcreation" data-dojo-attach-point="divsponsorcreation">
+            <div class="card-header">${_i18n.CreateSponser} <a href="javascript:void()" class="CloseUserForm"><i class="fas fa-times"></i></a></div>
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="form-group d-flex row">
+                            <div class="col-md-2">
+                                <label>${_i18n.Username}:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" data-dojo-attach-point="SponserUsername" data-dojo-attach-event="onchange:ClearUsername" placeholder="${_i18n.EnterUserName}" autocomplete="off"
+                                       readonly onfocus="this.removeAttribute('readonly');">
+                                <small data-dojo-attach-point="lbluser" style="display:none" class="errorClass">${_i18n.PleaseEnterUserName}</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                        <div class="form-group d-flex row">
+                            <div class="col-md-2">
+                                <label>${_i18n.Password}:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="password" class="form-control" data-dojo-attach-point="SponserPassword" data-dojo-attach-event="onchange:ClearPassword" placeholder="${_i18n.Enterpassword}" autocomplete="off"
+                                       readonly onfocus="this.removeAttribute('readonly');">
+                                <small data-dojo-attach-point="lblpwd" style="display:none" class="errorClass">${_i18n.PleaseEnterPassword}</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 col-xs-12">
+                        <div class="form-group d-flex row">
+                            <div class="col-md-2">
+                                <label>${_i18n.Email}:</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="email" class="form-control" data-dojo-attach-point="Email" data-dojo-attach-event="onchange:ClearEmail" placeholder="${_i18n.EnterEmail}">
+                                <small data-dojo-attach-point="lblemail" style="display:none" class="errorClass">${_i18n.PleaseEnterEmailAddress}</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-xs-12">
+                        <div class="form-group d-flex row">
+                            <div class="col-md-2">
+                                <label>${_i18n.assignBirds}:</label>
+                            </div>
+                            <div class="col-md-5 SumoMultiselect">
+                                <select class="form-control" name="BirdAssign" data-dojo-attach-point="ddlBirdAssign" data-dojo-attach-event="onchange:ClearBirdIds" multiple></select>
+                                <small data-dojo-attach-point="lblAssignedBirds" style="display:none" class="errorClass">${_i18n.SelectBird}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card-footer"><button type="button" data-dojo-attach-point="savedetails" class="btn btn-primary" data-dojo-attach-event="onclick:RegisterUser">${_i18n.SaveandUpdate}</button></div>
+        </div>
+
+    </div>
+</div>
+

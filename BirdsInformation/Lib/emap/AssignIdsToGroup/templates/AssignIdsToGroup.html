@@ -1,0 +1,49 @@
+﻿<div>
+    <a href="javascript:void()" data-bs-toggle="tooltip" title="${_i18n.Close}" class="CloseContainer"><i class="far fa-times-circle"></i></a>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-6 col-xs-12 ">
+                <h4 class="SubHeading">${_i18n.AssignBirdsToPublic}</h4>
+            </div>
+        </div>
+
+
+
+        <form class="mt-5">
+            <div class="form-group row">
+
+                <div class="col-lg-2 col-md-4 col-12">
+                    <label class="px13" for="Group">${_i18n.Groups}:</label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12">
+                    <select class="form-control" name="Group" data-dojo-attach-point="ddlGroup" data-dojo-attach-event="onchange:ClearGroupNames">
+                    </select>
+                    <small data-dojo-attach-point="lblGroup" style="display:none" class="errorClass">${_i18n.SelectGroup}</small>
+                </div>
+
+
+            </div>
+
+            <div class="form-group row ">
+                <div class="col-lg-2 col-md-4 col-12">
+                    <label class="px13" for="birdsinfo">${_i18n.ChooseaBird}: </label>
+                </div>
+                <div class="col-lg-3 col-md-4 col-12 mb-3 ChooseBird SumoMultiselect">
+                    <select class="form-control" name="BirdInfo" data-dojo-attach-point="ddlBirdAssign" data-dojo-attach-event="onchange:ClearBirdid" multiple>
+                    </select>
+                    <small data-dojo-attach-point="lblBirdid" style="display:none" class="errorClass">${_i18n.SelectBird}</small>
+                </div>
+                <div class="col-lg-3 col-md-12 col-12 clearFix">
+                    <div class="form-group">
+                        <button class="btn btn-primary" data-dojo-attach-point="setAssignIdstoGroup" type="button" data-dojo-attach-event="onclick:AssignIDsGroup"> ${_i18n.AssignIDsGroup} </button>
+                    </div>
+                </div>
+            </div>
+            <!--   <div data-dojo-attach-point="ColorsObj"></div>-->
+
+        </form>
+    </div>
+
+</div>
+

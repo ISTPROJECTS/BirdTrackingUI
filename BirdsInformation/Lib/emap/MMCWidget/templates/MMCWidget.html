@@ -1,0 +1,116 @@
+﻿<div data-dojo-attach-point="SensorTypeSec" class="ReportsHideShow" style="display:none;">
+    <a href="javascript:void()" class="ReportsDashLink sm-showhide"><i class="fas fa-arrow-left"></i>&nbsp;${_i18n.ReportDashBoard}</a>
+    <a href="javascript:void()" class="BacktoDash lg-showhide" style="top:30px"><i class="fas fa-arrow-left"></i></a>
+    <div class="AnimationSideDiv AnimationSideDivOther">
+        <h5 class="SubHeading"><label style="font-weight:bold">${_i18n.MMC}</label></h5>
+
+        <div class="AnimBody-MMC">
+
+            <form>
+
+                <div class="form-group">
+                    <label for="fromdate">${_i18n.SpeciesName}</label>
+                    <select name="SpeName" data-dojo-attach-point="ddlSpeciesName"></select>
+                    <small data-dojo-attach-point="lblSpeciesName" style="display:none" class="errorClass lblSpeciesName">${_i18n.PleaseSelectSpeciesName}</small>
+                </div>
+                <div class="form-group">
+                    <label for="fromdate">${_i18n.SensorType}</label>
+                    <select name="sensorType" data-dojo-attach-point="ddlSensorType" data-dojo-attach-event="onchange:getPTTDS">
+                    </select>
+                    <small data-dojo-attach-point="lblSensortName" style="display:none" class="errorClass lblSensortName">${_i18n.PleaseSelectSensorType}</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="fromdate" class="float-start">${_i18n.PlatformID}</label> <div class="float-end"><div class="LegDiv"><span class="Green"></span>${_i18n.Active}</div><div class="LegDiv"><span class="Red"></span>${_i18n.Inactive}</div></div>
+                    <select name="ddlPlatformID" data-dojo-attach-point="ddlPlatformID" data-dojo-attach-event="onchange:getStartEndDates"></select>
+                    <small data-dojo-attach-point="lblPlatformId" style="display:none" class="errorClass lblPlatformId">${_i18n.PleaseSelectPlatformId}</small>
+                </div>
+                <div class="form-group">
+                    <label for="fromdate">${_i18n.FromDate}:</label>
+                    <input type="text" data-date-format="dd-mm-yyyy" data-dojo-attach-point="fromdate" class="dateclass" placeholder="${_i18n.ddmmyyyy}" data-dojo-attach-event="onclick:ClearLabelfromdate" data-auto-close="true" readonly="readonly" />
+                    <small data-dojo-attach-point="lblfromdate" style="display:none" class="errorClass lblfromdate">${_i18n.PleaseEnterFromDate} </small>
+                </div>
+                <div class="form-group">
+                    <label for="todate">${_i18n.ToDate}:</label>
+                    <input type="text" data-date-format="dd-mm-yyyy" data-dojo-attach-point="todate" class="dateclass" placeholder="${_i18n.ddmmyyyy}" data-auto-close="true" data-dojo-attach-event="onclick:ClearLabeltodate" readonly="readonly" />
+                    <small data-dojo-attach-point="lbltodate" style="display:none" class="errorClass lbltodate">${_i18n.PleaseEnterToDate} </small>
+                    <small data-dojo-attach-point="lblgreater" style="display:none" class="errorClass lblgreater">${_i18n.ToDateShouldbeGreaterthanFromDate} </small>
+                </div>
+
+            </form>
+
+            <div class="form-group">
+                <button class="btn btn-primary w-100" data-dojo-attach-point="GenerateMMC" type="button" data-dojo-attach-event="onclick:generateReport"> ${_i18n.GenerateMMC} </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ReportsDiv">
+        <div class="TpPanel">
+            <!--<h4 class="SubHeading">${_i18n.MMC}</h4>-->
+            <h5 class="SubHeading"><label style="font-weight:bold">${_i18n.MMC}</label></h5>
+            <ul class="nav nav-tabs mt-3" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" data-dojo-attach-point="WinteringAreaTab" data-bs-toggle="tab" href="#WinteringAreaTableContainer" role="tab" aria-controls="WinteringAreaTableContainer" aria-selected="true">${_i18n.WinteringArea}</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-dojo-attach-point="SpringMigrationTab" data-bs-toggle="tab" href="#SpringMigrationContainer" role="tab" aria-controls="SpringMigrationContainer" aria-selected="false">${_i18n.SpringMigration}</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-dojo-attach-point="BreedingAreaTab" data-bs-toggle="tab" href="#BreedingAreaContainer" role="tab" aria-controls="BreedingAreaContainer" aria-selected="false">${_i18n.BreedingArea}</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" data-dojo-attach-point="AutumnMigrationTab" data-bs-toggle="tab" href="#AutumnMigrationContainer" role="tab" aria-controls="AutumnMigrationContainer" aria-selected="false">${_i18n.AutumnMigration}</a>
+                </li>
+
+                <a class="btn btn-primary PullRightBut" style="display:none" data-dojo-attach-point="exportReportsMobile">
+                    <img src="Images/ExportReport.svg" />
+                </a>
+                <input type="hidden" id="MMCReport1" />
+                <input type="hidden" id="MMCReport2" />
+                <input type="hidden" id="MMCReport3" />
+                <input type="hidden" id="MMCReport4" />
+                <button class="btn btn-primary PullRightBut" style="display:none" data-dojo-attach-point="exportReports">${_i18n.ExportReport}</button>
+            </ul>
+            <div class="tab-content" id="myTabContent2">
+                <div class="tab-pane fade show active" id="WinteringAreaTableContainer" role="tabpanel" aria-labelledby="WinteringAreaTableContainer-tab">
+                    <div class="card">
+                        <div class="card-body">
+                            <div style="overflow-x:auto;">
+                                <table class="table table-hover BtisTableFull" data-dojo-attach-point="WinteringAreaTable" cellpadding="0" cellspacing="0" border="0" style="width:100%"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="SpringMigrationContainer" role="tabpanel" aria-labelledby="SpringMigrationContainer-tab">
+                    <div class="card">
+                        <div class="card-body">
+                            <div style="overflow-x:auto;">
+                                <table class="table table-hover BtisTableFull" data-dojo-attach-point="SpringMigration" cellpadding="0" cellspacing="0" border="0" style="width:100%"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="BreedingAreaContainer" role="tabpanel" aria-labelledby="BreedingAreaContainer-tab">
+                    <div class="card">
+                        <div class="card-body">
+                            <div style="overflow-x:auto;">
+                                <table class="table table-hover BtisTableFull" data-dojo-attach-point="BreedingArea" cellpadding="0" cellspacing="0" border="0" style="width:100%"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="AutumnMigrationContainer" role="tabpanel" aria-labelledby="AutumnMigrationContainer-tab">
+                    <div class="card">
+                        <div class="card-body">
+                            <div style="overflow-x:auto;">
+                                <table class="table table-hover BtisTableFull" data-dojo-attach-point="AutumnMigration" cellpadding="0" cellspacing="0" border="0" style="width:100%"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

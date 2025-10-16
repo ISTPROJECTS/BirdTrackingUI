@@ -1,0 +1,22 @@
+﻿<div data-dojo-attach-point="DivBirdInfo1" class="TextColor">
+    <form>
+
+        <div class="form-group">
+            <label for="birdsinfo">${_i18n.ChooseaBird}: </label>
+            <select class="form-control" name="BirdInfo" data-dojo-attach-point="ddlbirdinfo" data-dojo-attach-event="onclick:getBirdInfo">
+            </select>
+            <small data-dojo-attach-point="lblBirdid" style="display:none" class="errorClass">${_i18n.SelectBird}</small>
+        </div>
+        <div class="form-group overflow-auto">
+            <button class="btn btn-primary Exportsponsorhideshow float-start lg-showhide" data-dojo-attach-point="ExportExcel" type="button" style="display:none" data-dojo-attach-event="onclick:getExportData"> ${_i18n.Export} </button>
+        </div>
+        <div class="form-group">
+            <table data-dojo-attach-point="bird_table"></table>
+        </div>
+       
+
+    </form>
+</div>
+
+
+

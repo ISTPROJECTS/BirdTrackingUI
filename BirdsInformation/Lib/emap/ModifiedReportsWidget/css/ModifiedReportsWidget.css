@@ -1,0 +1,555 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500,700);
+
+/*.windowReports
+ {
+    background: #485563;*/ /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to left, #485563, #29323c);*/ /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to left, #485563, #29323c);*/ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/*}*/
+ 
+#pttlist {
+    position: absolute;
+    left: auto;
+    width: 200px;
+    height: 150px;
+    border: 3px solid blue;
+} 
+
+#divreports {
+    position: absolute;
+    left: 200px;
+    top: 20px;
+    margin: 0;
+    padding: 0;
+    width: calc(100% - 200px);
+    height: 95%;
+    overflow-y: auto;
+}
+
+.symbolPTTstatus {
+    width: 16px;
+    height: 16px;
+}
+
+.symbolPTTslist {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 12px;
+    height: 12px;
+}
+
+.tblcnames {
+    height: 10px;
+}
+
+.lableColorNotActive {
+    color: #34f805 !important;
+}
+
+#divOptions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    display: flexbox;
+    z-index: 9999; /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#0067a1+0,dfdfdf+50,dfdfdf+51,006c4e+100 */
+    background: #0067a1; /* Old browsers */
+    background: -moz-linear-gradient(left, #0067a1 0%, #dfdfdf 50%, #dfdfdf 51%, #006c4e 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #0067a1 0%,#dfdfdf 50%,#dfdfdf 51%,#006c4e 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #0067a1 0%,#dfdfdf 50%,#dfdfdf 51%,#006c4e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0067a1', endColorstr='#006c4e',GradientType=1 ); /* IE6-9 */
+}
+
+#exportReports {
+    margin: 0 !important;
+}
+
+.locClassReports {
+    position: absolute;
+    padding: 50px;
+    top: 20px;
+    right: 0;
+    margin-top: 50px;
+    height: 95%;
+    max-height: 95%;
+    width: 98%;
+}
+
+#divOptions input {
+    color: pink;
+}
+
+
+.colheadings {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: underline;
+    color: black;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.colheadings1 {
+    position: absolute;
+    top: -20px;
+    left: 40px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    color: #dfdfdf;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0px 0px 19px #A1A1A1;
+}
+
+
+
+
+
+#runreport {
+    width: 50px;
+}
+
+
+#divArgosGPScount {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background: #FDB45C;
+    overflow-y: scroll;
+}
+
+
+#period {
+    margin-top: 30px;
+    width: 200px;
+    float: left;
+    display: flexbox;
+    border-right: groove #dfdfdf thin;
+}
+
+    #period input {
+        margin: 0;
+        margin-left: 10px;
+        padding: 0;
+        float: left;
+    }
+
+    #period label {
+        margin: 0;
+        margin-left: 10px;
+        padding: 0;
+    }
+
+    #period div {
+        float: left;
+    }
+
+
+.legend1 {
+    position: absolute;
+    top: 20px;
+    right: 150px;
+}
+
+.legend2 {
+    position: absolute;
+    top: -50px;
+    right: 0px;
+}
+
+.canvasCount {
+    position: relative;
+    width: 90%;
+    float: left;
+    height: 350px;
+}
+
+
+.canvasLoc {
+    position: relative;
+    width: 45%;
+    float: left;
+    height: 250px;
+}
+
+#Reporttodate, #Reportfromdate {
+    width: 170px;
+    border: solid black thin;
+}
+
+
+.reportsInfo {
+    position: absolute;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    background: #485563; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #485563, #29323c); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #485563, #29323c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 8px;
+    margin-left: 10px;
+}
+
+.stats {
+    height: 200px;
+}
+
+.locationGrpahs {
+    position: absolute;
+    top: 600px;
+    left: 10px;
+    display: flexbox;
+}
+
+
+.colbar {
+    text-align: center;
+    width: 90%;
+    float: left;
+    padding: 10px;
+    margin-top: 10px;
+    position: relative;
+    display: flexbox;
+}
+
+.col {
+    position: relative;
+    width: 45%;
+    height: 250px;
+    float: left;
+    margin: 0px;
+    margin-top: 40px;
+    padding: 0px;
+}
+
+.middle:before, .middle:after {
+    content: "";
+    height: 80%;
+    border: 1px solid #333;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.middle:before {
+    left: 0;
+}
+
+.middle:after {
+    right: 0;
+}
+
+.matchStats {
+    float: right;
+    width: 300px;
+    height: 240px;
+    position: relative;
+}
+
+#gameStats, #roleStats {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 20px;
+    margin: auto;
+}
+
+#champData {
+    position: relative;
+    margin-left: 0px;
+    margin-top: 10px;
+    max-width: 90%;
+    float: left;
+    margin: 10px;
+    color: white;
+}
+
+canvas {
+    color: white;
+}
+
+#timeData {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.mainInfo {
+    padding: 20px;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    float: left;
+    z-index: 9999;
+}
+
+    .mainInfo span {
+        color: #999;
+    }
+
+    .mainInfo .aboutMe {
+        font-size: 12px;
+        color: #999;
+    }
+
+
+.clearFix {
+    clear: both;
+}
+
+.playerStats {
+    margin: auto;
+    padding: 0;
+    list-style: none;
+    margin: 6px;
+}
+
+    .playerStats li {
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        color: #fff;
+    }
+
+        .playerStats li span {
+            display: inline-block;
+            width: 60%;
+            color: #999;
+        }
+
+.backgroundText {
+    width: 100%;
+    height: 100%;
+    font-size: 56px;
+    color: rgba(255, 255, 255, 0.2);
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+.resizing {
+    position: relative;
+    width: 90%;
+    height: 100%;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+}
+
+
+/* check buttons*/
+
+#pttlist {
+    width: 85%;
+    height: 300px;
+    margin-left: 10px;
+    padding: 5px;
+    background: #dfdfdf;
+    overflow-y: scroll;
+    background: #668ca0; /* Old browsers */
+    background: -moz-linear-gradient(left, #668ca0 0%, #dfdfdf 38%, #dfdfdf 38%, #dfdfdf 61%, #436b5f 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #668ca0 0%,#dfdfdf 38%,#dfdfdf 38%,#dfdfdf 61%,#436b5f 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #668ca0 0%,#dfdfdf 38%,#dfdfdf 38%,#dfdfdf 61%,#436b5f 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#668ca0', endColorstr='#436b5f',GradientType=1 ); /* IE6-9 */
+}
+
+    #pttlist input {
+        color: black !important;
+        margin-left: 10px;
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    #pttlist label {
+        color: black !important;
+        width: 70%;
+    }
+
+
+/*tables */
+
+.rwd-table {
+    display:table;
+    margin: 1em 0;
+    width: 100%;
+    min-width: 300px;
+}
+
+    .rwd-table tr {
+        border-top: 1px solid #dfdfdf;
+        border-bottom: 1px solid #dfdfdf;
+    }
+
+    .rwd-table th {
+        display: none;
+    }
+
+    .rwd-table td {
+        display: block;
+    }
+
+    .rwd-table tr:last-child {
+        color: #dd5;
+    }
+
+    .rwd-table td:first-child {
+        padding-top: .5em;
+        color: #dd5;
+    }
+
+    .rwd-table td:last-child {
+        padding-bottom: .5em;
+    }
+
+    .rwd-table td:before {
+        content: attr(data-th) ": ";
+        font-weight: bold;
+        width: 6.5em;
+        display: inline-block;
+    }
+
+@media only screen and (min-width: 48.0625em) {
+    .rwd-table td:before {
+        display: none;
+    }
+}
+
+.rwd-table th, .rwd-table td {
+    text-align: left;
+}
+
+@media only screen and (min-width: 48.0625em) {
+    .rwd-table th, .rwd-table td {
+        display: table-cell;
+        padding: .25em .5em;
+    }
+
+        .rwd-table th:first-child, .rwd-table td:first-child {
+            padding-left: 0;
+        }
+
+        .rwd-table th:last-child, .rwd-table td:last-child {
+            padding-right: 0;
+        }
+}
+
+
+h1 {
+    font-weight: normal;
+    letter-spacing: -1px;
+    color: #34495E;
+}
+
+.rwd-table {
+    background: #34495E;
+    color: #fff;
+    border-radius: .4em;
+    overflow: hidden;
+}
+
+    .rwd-table tr {
+        border-color: #dfdfdf !important;
+        border-top: 1px solid #dfdfdf !important;
+        border-bottom: 1px solid #dfdfdf !important;
+    }
+
+    .rwd-table th, .rwd-table td {
+        margin: .5em 1em;
+        border-color: #dfdfdf !important;
+        border-bottom: 1px solid #dfdfdf !important;
+    }
+
+@media only screen and (min-width: 48.0625em) {
+    .rwd-table th, .rwd-table td {
+        padding: 1em !important;
+    }
+}
+
+.rwd-table th, .rwd-table td:before {
+    color: #dd5;
+}
+
+
+.chart-legend li span {
+    display: inline-block;
+    width: 12px !important;
+    height: 12px !important;
+    margin-right: 5px;
+}
+
+#reportbgcolor {
+    width: 40px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+}
+
+
+#container {
+    height: 400px;
+}
+
+.highcharts-figure,
+.highcharts-data-table table {
+    min-width: 310px;
+    max-width: 800px;
+    margin: 1em auto;
+}
+
+#datatable {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+    #datatable caption {
+        padding: 1em 0;
+        font-size: 1.2em;
+        color: #555;
+    }
+
+    #datatable th {
+        font-weight: 600;
+        padding: 0.5em;
+    }
+
+    #datatable td,
+    #datatable th,
+    #datatable caption {
+        padding: 0.5em;
+    }
+
+    #datatable thead tr,
+    #datatable tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+
+    #datatable tr:hover {
+        background: #f1f7ff;
+    }
+#container1 {
+    background-color: #FFFFFF;
+}

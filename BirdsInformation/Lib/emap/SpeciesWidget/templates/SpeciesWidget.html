@@ -1,0 +1,78 @@
+﻿<div data-dojo-attach-point="DivSpecies">
+    <form class="row">
+        <div class="col-md-4 col-sm-12 col-12">
+            <div class="form-group">
+                <label>${_i18n.PleaseSelectSpeciesStatus}:</label>
+                <select name="species" data-dojo-attach-point="ddlspecies" data-dojo-attach-event="onchange:getSpeciesNames">
+                    
+                </select>
+                <small data-dojo-attach-point="lblspeciesstatus" style="display:none" class="errorClass">${_i18n.PleaseSelectSpeciesStatus}</small>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12 col-12">
+            <div class="form-group">
+
+                <label for="tracking">${_i18n.TrackingPeriod}:</label>
+
+                <div id="whole_toggle">
+                    <label class="toggle-theme">
+                        <input type="checkbox" data-dojo-attach-point="switchbutton" data-dojo-attach-event="onchange:switch_Onchange" />
+                        <span class="switch"></span>
+                        <p data-dojo-attach-point="whole" class="wholetext">${_i18n.Whole}</p>
+                        <p data-dojo-attach-point="whithin">${_i18n.Within}</p>
+                    </label>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-md-4 col-sm-12 col-12">
+            <div class="form-group d-flex martop-4">
+                <label for="tentacles">${_i18n.chkSeasonWise}</label>
+                <input type="checkbox" data-dojo-attach-point="chkSeasonWise" name="Season" style="margin-left: 10px !important">
+            </div>
+        </div>
+            <div class="col-md-12 col-12">
+                <div class="DateDisplay divDateClass">
+                    <div class="col-md-6 col-12 p-1 form-group floatLeft ">
+                        <label data-dojo-attach-point="labelfromdate" for="fromdate">${_i18n.FromDate}:</label>
+                        <input type="text" data-date-format="dd-mm-yyyy" data-dojo-attach-point="fromdate" placeholder="${_i18n.ddmmyyyy}" data-dojo-attach-event="onclick:ClearLabelfromdate" class="dateclass" data-auto-close="true" readonly="readonly" />
+                        <small data-dojo-attach-point="lblfromdate" style="display:none" class="errorClass">${_i18n.PleaseEnterFromDate} </small>
+
+                    </div>
+                    <div class="col-md-6 col-12 p-1  floatLeft form-group ">
+
+                        <label data-dojo-attach-point="labeltodate" for="todate">${_i18n.ToDate}:</label>
+
+                        <input type="text" data-date-format="dd-mm-yyyy" data-dojo-attach-point="todate" placeholder="${_i18n.ddmmyyyy}" data-dojo-attach-event="onclick:ClearLabeltodate" class="dateclass" data-auto-close="true" readonly="readonly" />
+                        <small data-dojo-attach-point="lbltodate" style="display:none" class="errorClass">${_i18n.PleaseEnterToDate} </small>
+                        <small data-dojo-attach-point="lblgreater" style="display:none" class="errorClass">${_i18n.ToDateShouldbeGreaterthanFromDate} </small>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group col-md-12 flexWM">
+                <button class="btn btn-primary w-auto" data-dojo-attach-point="collect" type="button" data-dojo-attach-event="onclick:getresults">${_i18n.CollectSpeciesInformation}</button>
+                <button class="btn btn-primary stopoverclass w-auto" data-dojo-attach-point="btnstopover" type="button" style="display:none">${_i18n.StopOver}</button>
+                <button class="btn btn-primary MCPResultBtn w-auto" data-dojo-attach-point="btnMCP" type="button" data-dojo-attach-event="onclick:getMCPresults" style="display:none">${_i18n.SelectedMCP}</button>
+                <button class="btn btn-primary PointDensitybtn w-auto" data-dojo-attach-point="PointDensity" type="button" data-dojo-attach-event="onclick:getPointDensity" style="display:none">${_i18n.PointDensity}</button>
+                <button class="btn btn-primary MCPFullResultBtn w-auto" data-dojo-attach-point="btnMCPFull" type="button" data-dojo-attach-event="onclick:getMCPresults1" style="display:none">${_i18n.MCP}</button>
+
+                <br>
+            </div>
+
+    </form>
+
+    <div style="overflow-x:auto">
+        <table class='table table-hover IDBtisTable ' data-dojo-attach-point="tblActiveBirds"><tbody></tbody></table>
+    </div>
+
+</div>
+
+
+
+
+
+

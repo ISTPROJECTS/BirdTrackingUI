@@ -1,0 +1,72 @@
+﻿<div>
+    <div data-dojo-attach-point="updateMigration" class="CustomForm">
+        <form>
+            <div class="form-group">
+                <label for="SensorType">${_i18n.SensorType}: </label>
+                <select class="form-control sensortype" name="sensor" data-dojo-attach-point="ddlsensor" data-dojo-attach-event="onchange:getplatformid">
+                </select>
+                <small data-dojo-attach-point="lblSensortype" style="display:none" class="errorClass">${_i18n.PleaseSelectSensorType}</small>
+            </div>
+            <div class="form-group">
+                <label for="platformid">${_i18n.PlatformID}: </label>
+                <select class="form-control platformids" name="platform" data-dojo-attach-point="ddlplatformid" data-dojo-attach-event="onchange:ClearRecords">
+                </select>
+                <small data-dojo-attach-point="lblplatformid" style="display:none" class="errorClass">${_i18n.PleaseSelectPlatformID}</small>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-5" style="padding-right:0px;">
+                        <label for="fromdate">${_i18n.FromDate}:</label>
+                        <input type="text" data-date-format="dd-mm-yyyy" data-dojo-attach-point="fromdate" class="dateclass" placeholder="${_i18n.ddmmyyyy}" data-dojo-attach-event="onclick:ClearLabelfromdate" data-auto-close="true" readonly="readonly" />
+                        <small data-dojo-attach-point="lblfromdate" style="display:none" class="errorClass">${_i18n.PleaseEnterFromDate} </small>
+                    </div>
+
+                    <div class="col-md-5" style="padding-right:0px;">
+                        <label for="fromdatetime">${_i18n.Time}:</label>
+                        <input type="time" aria-describedby="required-description" class="form-control" placeholder="${_i18n.EnterTime}" data-dojo-attach-point="fromdatetime" data-dojo-attach-event="onclick:ClearLabelfromdatetime" data-auto-close="true" value="17:39:57">
+                        <small data-dojo-attach-point="lblfromtime" style="display:none" class="errorClass">${_i18n.PleaseEnterTime} </small>
+                    </div>
+                    <div class="col-md-2" style="margin-top:27px;" title="${_i18n.FromDateLocationTitle}">
+                        <a href="#" class="btnLink" data-dojo-attach-point="fromlocation" data-dojo-attach-event="onclick:FromLocationDate"><i class="fa fa-map-marker" id="Point"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-5" style="padding-right:0px;">
+                        <label for="todate">${_i18n.ToDate}:</label>
+                        <input type="text" data-date-format="dd-mm-yyyy" data-dojo-attach-point="todate" class="dateclass" placeholder="${_i18n.ddmmyyyy}" data-dojo-attach-event="onclick:ClearLabeltodate" data-auto-close="true" readonly="readonly" />
+                        <small data-dojo-attach-point="lbltodate" style="display:none" class="errorClass">${_i18n.PleaseEnterToDate} </small>
+                        <small data-dojo-attach-point="lblgreaterSeason" style="display:none" class="errorClass">${_i18n.ToDateShouldbeGreaterthanFromDate} </small>
+                    </div>
+
+                    <div class="col-md-5" style="padding-right:0px;">
+                        <label for="todatetime">${_i18n.Time}:</label>
+                        <input type="time" aria-describedby="required-description" class="form-control" placeholder="${_i18n.EnterTime}" data-dojo-attach-point="todatetime" data-dojo-attach-event="onclick:ClearLabeltodatetime" data-auto-close="true" value="17:39:57">
+                        <small data-dojo-attach-point="lbltotime" style="display:none" class="errorClass">${_i18n.PleaseEnterTime} </small>
+                        <small data-dojo-attach-point="lblTimegreater" style="display:none" class="errorClass">${_i18n.ToTimeShouldbeGreaterthanFromTime} </small>
+                    </div>
+                    <div class="col-md-2" style="margin-top:27px;" title="${_i18n.ToDateLocationTitle}">
+                        <a href="#" class="btnLink" data-dojo-attach-point="tolocation" data-dojo-attach-event="onclick:ToLocationDate" ><i class="fa fa-map-marker" id="Point"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tentacles">${_i18n.MigrationType} :</label>
+                <select class="form-control" name="Migration" data-dojo-attach-point="ddlMigration" data-dojo-attach-event="onclick:ClearSeasons">
+                </select>
+                <small data-dojo-attach-point="lblMigration" style="display:none" class="errorClass">${_i18n.PleaseSelectMigration} </small>
+            </div>
+
+            <div class="form-group d-flex">
+                <button class="btn btn-primary" data-dojo-attach-point="update" type="button" data-dojo-attach-event="onclick:getresults"> ${_i18n.update} </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,45 @@
+<div style="z-index:99999">
+    <div class="emap_PrintDijit">
+        <div>
+            <div class="form-group">
+                <div>${_i18n.TitleLabel}:</div>
+                <div>
+                    <input type="text" data-dojo-props="required:true" class="form-control" data-dojo-attach-point="title" placeholder="${_i18n.EnterMapTitle}" data-dojo-attach-event="onchange:ClearLabelTitle" />
+                    <small data-dojo-attach-point="lblprint" style="display:none" class="errorClass">${_i18n.PleaseEnterMapTitle}</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>${_i18n.FormatLabel}:</div>
+                <div>
+                    <select data-dojo-attach-point="format" class="form-control" data-dojo-attach-event="onchange:ClearLabelFormat">
+                    </select>
+                    <small data-dojo-attach-point="lblprintformat" style="display:none" class="errorClass">${_i18n.PleaseSelectFormat}</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    ${_i18n.LayoutLabel}:
+                </div>
+                <div>
+                    <select data-dojo-attach-point="layout" class="form-control" data-dojo-attach-event="onchange:ClearLabelLayout">
+                    </select>
+                    <small data-dojo-attach-point="lblprintlayout" style="display:none" class="errorClass">${_i18n.PleaseSelectLayout}</small>
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="button" data-dojo-props="busyLabel:'printing'" data-dojo-attach-event="onClick:print" data-dojo-attach-point="printButtonDijit">${_i18n.ExportLabel}</button>
+                <button class="btn btn-secondary" data-dojo-attach-point="clearActionBarNode" type="button"
+                        data-dojo-attach-event="onClick:clearResults">
+                    ${_i18n.ClearLabel}
+                </button>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <div data-dojo-attach-point="printResultsNode" class="resultsContainer">
+            </div>
+        </div>
+
+        <!--</div>-->
+    </div>
+</div>

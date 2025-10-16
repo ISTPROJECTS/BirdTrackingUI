@@ -1,0 +1,16 @@
+﻿#footer {
+    top: auto !important;
+    bottom: 0px !important;
+}
+
+table.dataTable thead .sorting {
+    background-color: #ffffff;
+    font-weight: bold;
+}
+.tabStripButton {
+    display: none;
+}
+ui-icon dgrid-hider-toggle
+{
+    display:none;
+}

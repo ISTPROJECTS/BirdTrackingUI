@@ -1,0 +1,28 @@
+﻿html, body, .container, #mapDiv {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin: 0;
+    font-family: "Open Sans";
+}
+#mapDiv {
+    padding: 0;
+}
+#basemapGallery {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 50;
+}
+#header {
+    background-color: rosybrown;
+    text-align: center;
+}
+#footer {
+    background-color: rosybrown;
+    text-align: center;
+}
+#rightPane {
+    width: 20%;
+}

@@ -1,0 +1,81 @@
+﻿<div data-dojo-attach-point="birdTrackingByNames" >
+    <form>
+        <div class="form-group">
+
+            <label for="Speciesname">${_i18n.SpeciesName}: </label>
+
+            <select name="SpeName" data-dojo-attach-point="ddlSpeciesName" data-dojo-attach-event="onchange:getPTTDS">
+               
+            </select>
+            <small data-dojo-attach-point="lblSpeciesName" style="display:none" class="errorClass">${_i18n.PleaseSelectSpeciesName}</small>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="SensorCategory">${_i18n.SensorCategory}: </label>
+
+            <select name="sensorCategory" data-dojo-attach-point="ddlSensorCategory" data-dojo-attach-event="onchange:getsensortype">
+                
+            </select>
+            <small data-dojo-attach-point="lblSensorCategory" style="display:none" class="errorClass">${_i18n.PleaseSelectSensorCategory}</small>
+
+        </div>
+        <div class="form-group">
+
+            <label for="sensorTypes">${_i18n.SensorType}:  </label>
+
+            <select name="sensorType" data-dojo-attach-point="dddlSensorType" data-dojo-attach-event="onchange:getYearsValues">
+            </select>
+            <small data-dojo-attach-point="lblSensortName" style="display:none" class="errorClass">${_i18n.PleaseSelectSensorType}</small>
+
+        </div>
+        <div class="form-group divyear">
+            <label for="Year">${_i18n.Year}:</label>
+            <select name="year" data-dojo-attach-point="ddlYears" data-dojo-attach-event="onchange:getPlatFormIDS">
+                <option value=""></option>
+            </select>
+            <small data-dojo-attach-point="lblSensorYear" style="display:none" class="errorClass">${_i18n.PleaseSelectYear}</small>
+        </div>
+
+        <div data-dojo-attach-point="pltfrmdiv" class="form-group SumoMultiselect">
+
+            <label data-dojo-attach-point="pltformid" class="float-start">${_i18n.PlatFormID}:</label> <div class="float-end"><div class="LegDiv"><span class="Green"></span>${_i18n.Active}</div><div class="LegDiv"><span class="Red"></span>${_i18n.Inactive}</div></div>
+            
+            <select name="platformids" class="testselect2" data-dojo-attach-point="divPlatFormIds" data-dojo-attach-event="onchange:getPlatformIDList" multiple>
+            </select>
+            <div>
+                <small data-dojo-attach-point="lblplatformID" style="display:none" class="errorClass">${_i18n.PleaseSelectPlatformID}</small>
+
+            </div>
+
+        </div>
+        <div class="form-group">
+
+            <label for="tentacles">${_i18n.TimeInterval} (${_i18n.TIhours}) :</label>
+
+            <input type="number" data-dojo-attach-point="ddltimeInterval" name="tentacles" min="1" max="100" onkeydown="javascript: return event.keyCode == 69 ? false : true">
+
+            <small data-dojo-attach-point="lbltimeIntervals" style="display:none" class="errorClass">${_i18n.PleaseSelectTimeInterval}</small>
+
+        </div>
+        <div class="form-group d-flex">
+            <label for="tentacles">${_i18n.chkSeasonWise}</label>
+            <input type="checkbox" data-dojo-attach-point="chkSeasonWise" name="Season" style="margin-left: 10px !important" data-dojo-attach-event="onclick:GetMigration">
+        </div>
+        <div class="form-group d-flex">
+            <button class="btn btn-primary" data-dojo-attach-point="runNamesFilter" type="button" data-dojo-attach-event="onclick:getBirdNameResultValidate"> ${_i18n.Run} </button>
+            <button class="btn btn-primary" data-dojo-attach-point="animate" type="button"> ${_i18n.Animate}</button>
+            <button class="btn btn-primary btnstopover" data-dojo-attach-point="btnstopover" type="button" style="display:none"> ${_i18n.StopOver} </button>
+
+        </div>
+        <div>
+            <label class="colourdependency">${_i18n.MigrationNote}</label>
+        </div>
+
+
+    </form>
+
+
+</div>
+

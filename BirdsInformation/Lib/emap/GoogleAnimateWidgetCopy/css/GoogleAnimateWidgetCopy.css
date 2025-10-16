@@ -1,0 +1,606 @@
+﻿#gmap_canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.map-control {
+   /* background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);*/
+    font-family: "Roboto", "sans-serif";
+    margin: 10px;
+    padding-right: 5px;
+    /* Hide the control initially, to prevent it from appearing
+           before the map loads. */
+    /*display: none;*/
+}
+
+.selector-control {
+    font-size: 14px;
+    line-height: 30px;
+    vertical-align: baseline;
+}
+
+
+.gmapBirdInfo {
+    position: absolute;
+    left: 10px;
+    top: 38px;
+    width: 220px;
+    height: 90%;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: #0067A1;
+    background: rgba(0,103,161,.9);
+    -webkit-transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.3s;
+    z-index: 9999;
+    border-radius: 3px;
+}
+
+.gmapBirdInfoclose {
+    width: 35px;
+    height: 28px;
+    text-align: center;
+    padding-top: 3px;
+}
+
+
+#gmapBirdImage {
+    margin-top: 5px;
+    width: 90px;
+    height: 90px;
+}
+
+
+#gmapBirdName {
+    width: 100%;
+    text-align: center !important;
+    height: 20px;
+    color: black;
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+}
+
+
+#gmapbirdDetails {
+    width: 95%;
+    max-height: 300px;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+    overflow-y: auto;
+}
+
+
+
+#gmapbirdTravelDistance {
+    position: absolute;
+    left: 5px;
+    top: 290px;
+    width: 95%;
+    height: 30px;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+}
+
+#gmappntlocation {
+    position: absolute;
+    left: 0px;
+    top: 330px;
+    width: 200px;
+    height: 14px;
+    padding-top: 10px;
+    padding-left: 5px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    color: Black;
+    z-index: 9999;
+    vertical-align: middle;
+}
+
+
+#gmapBirdPosition {
+    position: absolute;
+    left: 0px;
+    top: 330px;
+    width: 180px;
+    height: 150px;
+    padding-top: 30px;
+    padding-left: 5px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+    color: White;
+}
+
+#gmapControl {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    padding-top: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    color: White;
+    background-color: #006c4e;
+}
+
+.switcher {
+    overflow: hidden;
+    margin: 0px;
+}
+
+    .switcher.emerald input[type="radio"]:checked + label {
+        color: Green;
+    }
+
+    .switcher.emerald label {
+        color: Blue;
+    }
+
+    .switcher.emerald input {
+        display: none;
+    }
+
+        .switcher.emerald input[type="radio"]:checked + label {
+            border-bottom: 0.11em solid #004037;
+            border-top: 0.25em solid #066d5e;
+            -moz-box-shadow: rgba(0, 64, 55, 0.25) 0 0 12px -2px inset, rgba(0, 74, 63, 0.25) 0 0 3px 3px inset;
+            -webkit-box-shadow: rgba(0, 64, 55, 0.25) 0 0 12px -2px inset, rgba(0, 74, 63, 0.25) 0 0 3px 3px inset;
+            box-shadow: rgba(0, 64, 55, 0.25) 0 0 12px -2px inset, rgba(0, 74, 63, 0.25) 0 0 3px 3px inset;
+        }
+
+    .switcher.emerald .switcher-item {
+        float: left;
+    }
+
+        .switcher.emerald .switcher-item label {
+            width: calc(50% + 0.5em);
+            background: #dfdfdf;
+            display: inline-block;
+            padding: 0.2em 1em;
+            border: 0.11em solid #004f44;
+            border-left: 0 none;
+            border-bottom: 0.25em solid #004f44;
+            font-weight: bold;
+        }
+
+            .switcher.emerald .switcher-item label:hover {
+                cursor: pointer;
+            }
+
+        .switcher.emerald .switcher-item:first-child label {
+            -moz-border-radius: 4px 0 0 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px 0 0 4px;
+            border-left: 0.11em solid #004f44;
+        }
+
+        .switcher.emerald .switcher-item:last-child label {
+            -moz-border-radius: 0 4px 4px 0;
+            -webkit-border-radius: 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+
+.speedslider {
+    width: 185px !important;
+    margin-right: 20px !important;
+    background: #006c4e;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none; /*fix for FF unable to apply focus style bug */ /*required for proper track sizing in FF*/
+    border: none;
+}
+
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 180px;
+        height: 5px;
+        background: #ddd;
+        border: none;
+        border-radius: 3px;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: goldenrod;
+        margin-top: -4px;
+    }
+
+    input[type=range]:focus {
+        outline: none;
+    }
+
+        input[type=range]:focus::-webkit-slider-runnable-track {
+            background: #ccc;
+        }
+
+    /*input[type=range]::-moz-range-track {
+        width: 180px;
+        height: 5px;
+        background: #ddd;
+        border: none;
+        border-radius: 3px;
+    }
+
+    input[type=range]::-moz-range-thumb {
+        border: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: goldenrod;
+    }
+*/
+
+    /*hide the outline behind the border*/
+
+    input[type=range]:-moz-focusring {
+        outline: 1px solid white;
+        outline-offset: -1px;
+    }
+
+    input[type=range]::-ms-track {
+        width: 100px;
+        height: 5px; /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+        background: transparent; /*leave room for the larger thumb to overflow with a transparent border */
+        border-color: transparent;
+        border-width: 6px 0; /*remove default tick marks*/
+        color: transparent;
+    }
+
+    input[type=range]::-ms-fill-lower {
+        background: #777;
+        border-radius: 10px;
+    }
+
+    input[type=range]::-ms-fill-upper {
+        background: #ddd;
+        border-radius: 10px;
+    }
+
+    input[type=range]::-ms-thumb {
+        border: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: goldenrod;
+    }
+
+    input[type=range]:focus::-ms-fill-lower {
+        background: #888;
+    }
+
+    input[type=range]:focus::-ms-fill-upper {
+        background: #ccc;
+    }
+
+
+
+.buttonAnim {
+    display: block;
+    background: #ddd;
+    margin: auto;
+    cursor: pointer;
+    text-align: center;
+    font-family: Arial;
+    font-size: 20px;
+    line-height: 24px;
+    border-radius: 20px;
+    color: #333;
+    text-shadow: 0px 1px 0px #fff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.6), inset 0px 1px 3px #ffffff;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    -o-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+}
+
+    .buttonAnim:hover {
+        background: #eee;
+        box-shadow: 0px 12px 15px rgba(0, 0, 0, 0.6);
+    }
+
+    .buttonAnim:active {
+        color: #555;
+        text-shadow: 0px 1px 0px #aaa;
+        background: #999;
+        box-shadow: inset 0px 10px 15px rgba(0, 0, 0, 0.4), inset 0px -1px 3px rgba(0, 0, 0, 0.7);
+    }
+
+    /*.buttonAnim:before {
+        display: none;
+        content: '';
+        z-index: -1;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #eee;
+        border-radius: 20px;
+        height: 32px;
+        box-shadow: 0 2px 5px #999999, inset 0px 1px 5px #000000, 0 -2px 10px #ffffff;
+        background: #ff3333;
+        background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #ff3333), color-stop(1, #ff3333));
+        background: -ms-linear-gradient(bottom, #ff3333, #ff3333);
+        background: -moz-linear-gradient(center bottom, #ff3333 0%, #ff3333 100%);
+        background: -o-linear-gradient(#ff3333, #ff3333);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3333', endColorstr='#ff3333', GradientType=0);
+    }
+
+    .buttonAnim:after {
+        display: none;
+        content: '';
+        position: absolute;
+        top: -7px;
+        left: -7px;
+        border-radius: 35px;
+        background: none;
+        box-shadow: 0 0 3px #b4ff00, inset 0 0 20px #b4ff00;
+    }*/
+
+    .buttonAnim.large {
+        width: 100px;
+        padding: 0px 30px;
+        height: 24px;
+    }
+
+        .buttonAnim.large:before {
+            padding: 0px 52px;
+            content: '';
+            width: 6px;
+        }
+
+        .buttonAnim.large:after {
+            padding: 0px 10px;
+            content: '';
+            width: auto;
+        }
+
+    .buttonAnim.active:before {
+        background: #a1ff00;
+    }
+
+    .buttonAnim.active:after {
+        display: block;
+    }
+
+
+.accordion {
+    width: 100%;
+    margin: 10px auto;
+}
+
+    .accordion .item {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .accordion .header {
+        padding: 5px 60px;
+        cursor: pointer;
+        height: 12px;
+        line-height: 12px;
+        width: 90%;
+    }
+
+        .accordion .header h3 {
+            margin: 0;
+            font-size: 12px;
+            color: white !important;
+            float: right;
+        }
+
+    .accordion .content {
+        padding: 0 20px;
+        font-size: 15px;
+        line-height: 12px;
+        font-size: 14px;
+        max-height: 0;
+        transition: all ease-in-out 0.2s;
+        background: #dfdfdf;
+    }
+
+    .accordion .item.open .content {
+        padding: 20px;
+        min-height: 100px !important;
+    }
+
+
+.birdIndetity {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #fff;
+   
+    line-height: 10px;
+    text-align: center;
+    float: none;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.gm-bundled-control-on-bottom {
+    right: 50px !important;
+    bottom: 250px !important;
+}
+.gm-fullscreen-control{
+    right:25px !important;
+}
+html[dir='rtl'] .gm-bundled-control-on-bottom {
+    left: 30px !important;
+    bottom: 250px !important;
+}
+html[dir='rtl'] .gm-fullscreen-control {
+    right: 78vw !important;
+}
+
+.gmap_inputs {
+    width: 95% !important;
+    margin-top: 0 !important;
+}
+
+.gmap_message {
+    width: 100%;
+    font-family: Arial;
+    font-size: 15px;
+    color: Red;
+}
+
+#close_gmapbirdinfo {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    z-index: 9999;
+    color: White;
+    cursor: pointer;
+    padding-top: 8px;
+}
+
+
+.gm-style-mtc div {
+    background: rgba(0,103,161,.9) !important;
+    color: White !important;
+}
+
+.gm-style .gm-style-iw-t {
+    background-color: #f6931f !important;
+}
+
+.IDDateBox {
+}
+
+
+.IDDateLoop {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: auto;
+    padding: 10px;
+    margin-bottom:10px;
+}
+
+/*.gmnoprint {
+    bottom:90vh !important;
+   
+}
+*/
+#bottomPanel {
+    left: 50%;
+    margin: 0 auto;
+    margin-left: -500px;
+    position: absolute;
+    bottom: 2.5em;
+}
+#timeInfo {
+    border-radius: 4px;
+    border: solid 2px #ccc;
+    background-color: #fff;
+    display: block;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    width: 1000px;
+    z-index: 99;
+}
+#iw-container {
+    background-color: pink;
+}
+.gm-ui-hover-effect {
+    background-color: #F46239 !important;
+    top: 0px !important;
+    right: 0px !important;
+    width: 20px !important;
+    height: 20px !important;
+    opacity:1 !important;
+    border-radius:100px;
+    
+}
+#bottomPanelforInfoWindow {
+    left: 2%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 2.5em;
+    /*background-color: rgba(4, 53, 91, 0.8);
+    padding: 10px;*/
+    color: #ffffff !important;
+
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    border: 2px solid #F46239 !important;
+    padding: 0px !important;
+    margin: 0px;
+}
+html[dir='rtl'] #bottomPanelforInfoWindow {
+    left: auto;
+    right: 2%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 2.5em;
+    background-color: rgba(4, 53, 91, 0.8);
+    padding: 10px;
+    color: #ffffff !important;
+}
+
+/*html[dir='rtl'] .gmnoprint {
+    margin: 10px !important;
+    z-index: 0 !important;
+    position: absolute !important;
+    cursor: pointer !important;
+    right: 90px !important;*/
+    /*top: 0px;*/
+/*}*/
+
+.gm-style .gm-style-iw-c {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    border: 2px solid #F46239 !important;
+    padding:0px !important;
+    margin:0px;
+
+}
+.gm-style-iw-d {
+    overflow:auto !important;
+    color:#ffffff !important;
+    padding-top:12px;
+}
+
+.gm-style .gm-style-iw-t::after {
+    background: linear-gradient(45deg,rgba(244,98,57,1) 50%,rgba(244,98,57,0) 51%,rgba(244,98,57,0) 100%);
+}
+
+
+.gm-style img {
+    max-width: none;
+    margin-top: 2px !important;
+    margin-left: 4px !important;
+}
+
+
+.gm-ui-hover-effect > span{
+    margin:4px !important;
+}

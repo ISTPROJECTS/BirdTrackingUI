@@ -1,0 +1,56 @@
+﻿<div>
+    <div data-dojo-attach-point="queryfilter">
+        <form>
+            <div class="form-group">
+                <label for="SensorType">${_i18n.SensorType}: </label>
+                <select class="form-control sensortype" name="sensor" data-dojo-attach-point="ddlsensor" data-dojo-attach-event="onchange:getplatformid">
+                </select>
+                <small data-dojo-attach-point="lblSensortype" style="display:none" class="errorClass">${_i18n.PleaseSelectSensorType}</small>
+            </div>
+            <div class="form-group">
+                <label for="platformid">${_i18n.PlatformID}: </label>
+                <select class="form-control platformids" name="platform" data-dojo-attach-point="ddlplatformid" data-dojo-attach-event="onchange:getStartEndDates">
+                    <!--<option value=""></option>-->
+                </select>
+                <small data-dojo-attach-point="lblplatformid" style="display:none" class="errorClass">${_i18n.PleaseSelectPlatformID}</small>
+            </div>
+            <div data-dojo-attach-point="locationclasses" class="form-group SumoMultiselect" style="display:none">
+                <label  for="locClasses" data-dojo-attach-point="location">${_i18n.LocationClasses}:</label>
+                <select name="locClasses"  data-dojo-attach-point="divlocationclasses" multiple>
+                </select>
+                <!--<input type="text" data-dojo-attach-point="locationclasses" />-->
+            </div>
+            <div class="form-group">
+                <label for="fromdate">${_i18n.FromDate}:</label>
+                <input type="text" data-date-format="dd-mm-yyyy" data-dojo-attach-point="fromdate" class="dateclass" placeholder="${_i18n.ddmmyyyy}" data-dojo-attach-event="onclick:ClearLabelfromdate" data-auto-close="true" readonly="readonly" />
+                <small data-dojo-attach-point="lblfromdate" style="display:none" class="errorClass">${_i18n.PleaseEnterFromDate} </small>
+            </div>
+            <div class="form-group">
+                <label for="todate">${_i18n.ToDate}:</label>
+                <input type="text" data-date-format="dd-mm-yyyy" data-dojo-attach-point="todate" class="dateclass" placeholder="${_i18n.ddmmyyyy}" data-dojo-attach-event="onclick:ClearLabeltodate" data-auto-close="true" readonly="readonly" />
+                <small data-dojo-attach-point="lbltodate" style="display:none" class="errorClass">${_i18n.PleaseEnterToDate} </small>
+                <small data-dojo-attach-point="lblgreater" style="display:none" class="errorClass">${_i18n.ToDateShouldbeGreaterthanFromDate} </small>
+            </div>
+            <div class="form-group">
+                <label for="tentacles">${_i18n.TimeInterval} (${_i18n.TIhours}) :</label>
+                <input type="number" data-dojo-attach-point="timeinterval" name="tentacles" min="1" max="100" onkeydown="javascript: return event.keyCode == 69 ? false : true">
+            </div>
+            <div class="form-group d-flex">
+                <label for="tentacles">${_i18n.chkSeasonWise}</label>
+                <input type="checkbox" data-dojo-attach-point="chkSeasonWise" name="Season" style="margin-left: 10px !important">
+            </div>
+            <div class="form-group d-flex">
+                <button class="btn btn-primary" data-dojo-attach-point="run" type="button" data-dojo-attach-event="onclick:getresults"> ${_i18n.Run} </button>
+                <button class="btn btn-primary" data-dojo-attach-point="animate" type="button"> ${_i18n.Animate}</button>
+                <button class="btn btn-primary stopoverbtn" data-dojo-attach-point="btnstopover" type="button" style="display:none"> ${_i18n.StopOver} </button>
+
+            </div>
+            <div class="form-group">
+                <small data-dojo-attach-point="lblerror" style="display:none" class="errorClass">${_i18n.InvalidInputs} </small>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

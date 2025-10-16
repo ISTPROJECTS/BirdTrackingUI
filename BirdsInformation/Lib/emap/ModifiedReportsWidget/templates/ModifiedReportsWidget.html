@@ -1,0 +1,453 @@
+﻿
+<div data-dojo-attach-point="SensorTypeSec" class="ReportsHideShow" style="display:none;">
+
+    <div class="ReportSec" id="ArgosDash">
+        <a href="javascript:void()" class="ReportsDashLink sm-showhide"><i class="fas fa-arrow-left"></i>&nbsp;${_i18n.ReportDashBoard}</a>
+
+        <div class="AnimationSideDiv AnimationSideDivOther">
+          <!--  <div class="SubHeading" data-dojo-attach-point="SubHeadingReports">${_i18n.ARGOSReport}</div>-->
+           <label class="SubHeading" id="SubHeadingReports"></label>
+            <div class="AnimBody-R">
+                <form>
+                    <div class="form-group">
+                        <label for="SensorType">${_i18n.SensorType} </label>
+                        <select class="form-control sensortype" name="sensor" data-dojo-attach-point="ddlsensor" data-dojo-attach-event="onchange:GetPlatformidsbasedonSensortype">
+                        </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="Speciesname">${_i18n.SpeciesName} </label>
+                        <select name="SpeName" data-dojo-attach-point="ddlSpeciesName" data-dojo-attach-event="onchange:getPTTDS">
+                        </select>
+                    </div>
+
+                    <div class="form-group SumoMultiselect">
+                        <label for="platformid" class="float-start">${_i18n.SelectPlatformID} </label>  <div class="float-end"><div class="LegDiv"><span class="Green"></span>${_i18n.Active}</div><div class="LegDiv"><span class="Red"></span>${_i18n.Inactive}</div></div>
+                        <select class="form-control platformids" name="platform" data-dojo-attach-point="ddlplatformid" data-dojo-attach-event="onchange:GetDetailsofBird" multiple>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fromdate">${_i18n.FromDate}</label>
+                        <input type="text" data-date-format="dd-mm-yyyy" class="dateclass" data-dojo-attach-point="Reportfromdate" placeholder="${_i18n.ddmmyyyy}" data-dojo-attach-event="onclick:ClearLabelfromdate" data-auto-close="true" readonly="readonly">
+                        <small data-dojo-attach-point="lblfromdate" style="display:none" class="errorClass lblfromdate">${_i18n.PleaseEnterFromDate} </small>
+                    </div>
+                    <div class="form-group ">
+                        <label for="todate">${_i18n.ToDate}</label>
+                        <input type="text" data-date-format="dd-mm-yyyy" class="dateclass" data-dojo-attach-point="Reporttodate" placeholder="${_i18n.ddmmyyyy}" data-dojo-attach-event="onclick:ClearLabeltodate" data-auto-close="true" readonly="readonly">
+                        <small data-dojo-attach-point="lbltodate" style="display:none" class="errorClass lbltodate">${_i18n.PleaseEnterToDate} </small>
+                        <small data-dojo-attach-point="lblgreater" style="display:none" class="errorClass lblgreater">${_i18n.ToDateShouldbeGreaterthanFromDate} </small>
+                    </div>
+
+
+
+
+
+                    <div class="form-group">
+                        <button type="button" data-dojo-attach-point="getReports" class="btn btn-primary w-100" data-dojo-attach-event="onclick:GetReportsData">${_i18n.GenerateReport}</button>
+                    </div>
+                    <div class="form-group lg-showhide">
+                        <button type="button" data-dojo-attach-point="getRawData" class="btn btn-primary w-100 mt-3 sm-showhide" data-dojo-attach-event="onclick:RawDataGraph">${_i18n.RawData}</button>
+                    </div>
+                    <div class="form-group sm-showhide">                        
+                        <a href="#" class="btn btn-primary w-100 mt-3 float-start" data-dojo-attach-point="getRawDataMobile" download="download"> ${_i18n.RawData} </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="ReportsDiv">
+            <div class="TpPanel">
+                <h5 class="SubHeading"><label id="ReportHeadingLabel" style="font-weight:bold"></label></h5>
+                <a href="javascript:void()" class="BacktoDash BackNew lg-showhide"><i class="fas fa-arrow-left"></i></a>
+
+                <div class="row mt-4">
+
+                    <div class="col col-xs-12 MobileCard">
+                        <div class="card">
+
+                            <div class="card-body p-C">
+
+                                <div class="InnerCardItems">
+
+                                    <div class="CardData">
+                                        <div class="DashCardHead mb-4" id="lbllocationheading">${_i18n.NumberofLocations}</div>
+                                        <h3 class="title" data-dojo-attach-point="LocationData">
+                                        </h3>
+
+                                    </div>
+                                    <div class="CardIcon">
+                                        <img src="Images/Locations.png" class="img-fluid">
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col col-xs-12 MobileCard">
+                        <div class="card">
+
+                            <div class="card-body p-C">
+
+                                <div class="InnerCardItems">
+
+                                    <div class="CardData">
+                                        <div class="DashCardHead mb-4" id="lblSpeciesheading">${_i18n.NumberofSpecies}</div>
+                                        <h3 class="title" data-dojo-attach-point="SpeciesData">
+                                        </h3>
+
+                                    </div>
+                                    <div class="CardIcon">
+                                        <img src="Images/Species.png" class="img-fluid">
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col col-xs-12 MobileCard">
+                        <div class="card">
+
+                            <div class="card-body p-C">
+
+                                <div class="InnerCardItems">
+
+                                    <div class="CardData">
+                                        <div class="DashCardHead mb-4" id="lblBirdsheading">${_i18n.NumberofBirds}</div>
+                                        <h3 class="title" data-dojo-attach-point="BirdsData">
+                                        </h3>
+
+                                    </div>
+                                    <div class="CardIcon">
+                                        <img src="Images/Birds.png" class="img-fluid">
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col col-xs-12 MobileCard SpeedCountBox" style="display:none">
+                        <div class="card">
+
+                            <div class="card-body p-C">
+
+                                <div class="InnerCardItems">
+
+                                    <div class="CardData">
+                                        <div class="DashCardHead mb-4">${_i18n.AverageSpeed}</div>
+                                        <h3 class="title" data-dojo-attach-point="AvgSpeedData">
+                                        </h3>
+
+                                    </div>
+                                    <div class="CardIcon">
+                                        <img src="Images/Speed.png" class="img-fluid">
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col col-xs-12 MobileCard AltitudeCountBox" style="display:none">
+                        <div class="card">
+
+                            <div class="card-body p-C">
+
+                                <div class="InnerCardItems">
+
+                                    <div class="CardData">
+                                        <div class="DashCardHead mb-4">${_i18n.AverageAltitude}</div>
+                                        <h3 class="title" data-dojo-attach-point="AvgAltitudeData">
+                                        </h3>
+
+                                    </div>
+                                    <div class="CardIcon">
+                                        <img src="Images/Altitude.png" class="img-fluid">
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="ChartsforSensor" style="display:none">
+                    <div class="row my-4">
+
+                        <div class="col-lg-6 col-md-12 col-xs-12 mb-3">
+                            <h4 class="ChartHead float-start ">${_i18n.TotallocationsChart}</h4>
+                            <!--<button class="btn btn-primary float-end" data-dojo-attach-point="ViewReports" data-dojo-attach-event="onclick:ViewReportstable">${_i18n.ViewReport}</button>-->
+                            <div class="card ClearBoth">
+
+                                <div class="card-body">
+                                    <div id="Reportcontainer2" class="ClearBoth" style="padding-top:15px;"></div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-12 col-xs-12 mb-3">
+                            <h4 class="ChartHead float-start">${_i18n.TotallocationsCountChart}</h4>
+                            <button class="btn btn-primary float-end" data-dojo-attach-point="ViewReports" data-dojo-attach-event="onclick:ViewReportstable">${_i18n.ViewReport}</button>
+                            <div class="card ClearBoth">
+
+                                <div class="card-body">
+                                    <div id="Reportcontainer1" class="ClearBoth" style="padding-top:15px;"></div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row my-4">
+
+                        <div class="col-lg-6 col-md-12 col-xs-12 mb-3">
+                            <h4 class="ChartHead SpeedHeading">${_i18n.AverageSpeedChart}</h4>
+                            <div class="card ClearBoth">
+
+                                <div class="card-body">
+                                    <div id="container3" class="ClearBoth" style="padding-top:15px;"></div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-12 col-xs-12 mb-3">
+                            <h4 class="ChartHead">${_i18n.AverageAltitudeChart}</h4>
+                            <div class="card ClearBoth">
+
+                                <div class="card-body">
+                                    <div id="container4" class="ClearBoth" style="padding-top:15px;"></div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+                <div class="ArgosBasedCharts" style="display:none">
+                    <div class="row my-4">
+                        
+                        <h5 class="SubHeading"><label style="font-weight:bold">${_i18n.ReportWithArgosIDs}</label></h5>
+
+                        <div class="col-lg-6 col-md-12 col-xs-12 mb-3">
+                            <h4 class="ChartHead float-start">${_i18n.TotallocationsChart}</h4>
+                            <!--<button class="btn btn-primary float-end" data-dojo-attach-point="ViewReports" data-dojo-attach-event="onclick:ViewReportstable">View Report</button>-->
+                            <div class="card ClearBoth">
+
+                                <div class="card-body">
+                                    <div id="chart2" class="ClearBoth" style="padding-top:15px;"></div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-12 col-xs-12 mb-3">
+                            <h4 class="ChartHead">${_i18n.TotallocationsCountChart}</h4>
+
+                            <div class="card ClearBoth">
+
+                                <div class="card-body">
+                                    <div id="chart1" class="ClearBoth" style="padding-top:15px;"></div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row my-4">
+
+                        <div class="col-lg-6 col-md-12 col-xs-12 mb-3">
+                            <h4 class="ChartHead">${_i18n.AverageSpeedChart}</h4>
+                            <div class="card ClearBoth">
+
+                                <div class="card-body">
+                                    <div id="chart3" class="ClearBoth" style="padding-top:15px;"></div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-12 col-xs-12 mb-3">
+                            <h4 class="ChartHead">${_i18n.AverageAltitudeChart}</h4>
+                            <div class="card ClearBoth">
+
+                                <div class="card-body">
+                                    <div id="chart4" class="ClearBoth" style="padding-top:15px;"></div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <div class="container TableSec" id="TablesDiv" style="display:none">
+        <h5 class="SubHeading float-start"><label id="TableReportHeading" style="font-weight:bold"></label></h5>
+        <button class="btn btn-primary float-end mb-4 MobExpBtn lg-showhide" id="ExportReport">${_i18n.ExportReport}</button>
+        <a class="btn btn-primary float-end mb-4 MobExpBtn sm-showhide" id="ExportReportMobile">
+            <img src="Images/ExportReport.svg" />
+        </a>
+        <input type="hidden" id="Report1" />
+        <input type="hidden" id="Report2" />
+        <input type="hidden" id="Report3" />
+        <input type="hidden" id="Report4" />
+        <input type="hidden" id="Report5" />
+        <input type="hidden" id="Report6" />
+        <input type="hidden" id="Report7" />
+        <input type="hidden" id="Report8" />
+
+
+        <a href="javascript:void()" class="BacktoRep"><i class="fas fa-arrow-left"></i></a>
+
+        <div class="row my-4 ClearBoth">
+
+
+            <div class="col-lg-6 col-md-12 col-xs-12 mb-4">
+
+                <h4 class="ChartHead float-start">
+                    ${_i18n.LocationsCountforSelectedIDs}
+
+                </h4>
+
+                <div class="card ClearBoth">
+
+                    <div class="card-body tableCard">
+
+                        <div data-dojo-attach-point="Locationcount"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-xs-12 mb-4">
+
+                <h4 class="ChartHead">
+                    ${_i18n.TotalLocationsforSelectedIDs}
+                </h4>
+                <div class="card">
+
+                    <div class="card-body tableCard">
+
+                        <div data-dojo-attach-point="totalLocataioncount"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12 col-xs-12 mb-4">
+
+                <h4 class="ChartHead SpeedTableHeading">${_i18n.FlightSpeedofSelectedPTTIDs}</h4>
+                <div class="card">
+
+                    <div class="card-body tableCard">
+                        <div data-dojo-attach-point="SpeedofPID"></div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-xs-12 mb-4">
+
+                <h4 class="ChartHead">${_i18n.AltitudeofSelectedPTTIDs}</h4>
+                <div class="card">
+
+                    <div class="card-body tableCard">
+
+                        <div data-dojo-attach-point="AltitudeofPID"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ArgosBasedTables" style="display:none">
+            <div class="row my-4 ClearBoth">
+                <h5 class="SubHeading"><label style="font-weight:bold">${_i18n.ReportWithArgosIDs}</label></h5>
+                <div class="col-lg-6 col-md-12 col-xs-12 mb-4">
+
+                    <h4 class="ChartHead float-start">
+                        ${_i18n.LocationsCountforSelectedIDs}
+
+                    </h4>
+
+                    <div class="card ClearBoth">
+
+                        <div class="card-body tableCard">
+
+                            <div data-dojo-attach-point="ArgosLocationcount"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-xs-12 mb-4">
+
+                    <h4 class="ChartHead">
+                        ${_i18n.TotalLocationsforSelectedIDs}
+                    </h4>
+                    <div class="card">
+
+                        <div class="card-body tableCard">
+
+                            <div data-dojo-attach-point="ArgostotalLocataioncount"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-xs-12 mb-4">
+
+                    <h4 class="ChartHead">${_i18n.LocationClassesReport}</h4>
+                    <div class="card">
+
+                        <div class="card-body tableCard">
+                            <div data-dojo-attach-point="ArgosSpeedofPID"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-xs-12 mb-4">
+
+                    <h4 class="ChartHead">${_i18n.AltitudeofSelectedPTTIDs}</h4>
+                    <div class="card">
+
+                        <div class="card-body tableCard">
+
+                            <div data-dojo-attach-point="ArgosAltitudeofPID"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+

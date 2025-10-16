@@ -1,0 +1,1010 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://arcgis.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://arcgis.com; style-src 'self' 'unsafe-inline' https://arcgis.com;">-->
+    <title>Bird Tracking Information System</title>
+    <link rel="preconnect" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin>
+
+
+    <!--<link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" />-->
+    <link href="JavaScript/js/css/dataTables.min.css" rel="stylesheet" />
+
+
+    <link href="//fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <link href="CSS/Datepicker.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//js.arcgis.com/3.38/esri/css/esri.css">
+    <link rel="stylesheet" href="//js.arcgis.com/3.38/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/dojo/1.12.3/dijit/themes/claro/claro.css" />
+
+    <link href="CSS/sweetalert2.min.css" rel="stylesheet" />
+    <link href="CSS/sumoselect.css" rel="stylesheet" />
+
+    <link rel="canonical" href="//getbootstrap.com/docs/5.0/examples/navbar-fixed/">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="CSS/custom.css">
+    <link rel="stylesheet" href="CSS/responsive.css">
+    <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css">
+
+    <!--<link href="css/evol-colorpicker.css" rel="stylesheet" type="text/css">-->
+    <link href="CSS/evol-colorpicker.min.css" rel="stylesheet" />
+    <link href="CSS/demo.css" rel="stylesheet" />
+    <link href="//cdn.jsdelivr.net/npm/busy-load/dist/app.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/flick/jquery-ui.css">-->
+    <link rel="stylesheet" href="//use.typekit.net/vgm8wfl.css">
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>-->
+    <script src="//code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.7.12/xlsx.core.min.js"></script>
+
+    <!--<script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>-->
+    <script src="JavaScript/js/dataTables.min.js"></script>
+
+    <script src="JavaScript/JS2Shapefile.js"></script>
+    <script src="JavaScript/JSzip.js"></script>
+    <script src="JavaScript/sweetalert2.min.js"></script>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"></script>
+    <script src="JavaScript/jquery.sumoselect.js"></script>
+    <script src="JavaScript/datepicker.min.js"></script>
+    <script src="JavaScript/Dompurify.js"></script>
+    <script src="JavaScript/moment.js"></script>
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.4/purify.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.7/purify.min.js"></script>-->
+    <!--<script type="text/javascript" src="//cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js"></script>-->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDPDh5KxXi7D6vwrtcOQPOAoo2P8T4KvGA&libraries=visualization,geometry&region=ae"></script>
+
+    <!--<script src="JavaScript/arcgisjs.js"></script>-->
+
+    <script src="assets/js/evol-colorpicker.min.js" type="text/javascript"></script>
+    <!--<script src="//code.highcharts.com/highcharts.js"></script>-->
+    <!--<script src="//code.highcharts.com/modules/data.js"></script>-->
+    <!--<script src="//code.highcharts.com/modules/exporting.js"></script>
+    <script src="//code.highcharts.com/modules/export-data.js"></script>
+    <script src="//code.highcharts.com/modules/accessibility.js"></script>-->
+
+
+    <script src="JavaScript/js/highcharts.js"></script>
+    <script src="JavaScript/js/modules/exporting.js"></script>
+    <script src="JavaScript/js/modules/export-data.js"></script>
+    <script src="JavaScript/js/modules/accessibility.js"></script>
+
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.3.0/highcharts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.3.0/modules/accessibility.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.3.0/modules/export-data.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/9.3.0/modules/exporting.js"></script>-->
+
+
+    <script type="text/javascript">
+        var package_path = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'));
+        var dojoConfig = {
+            //The location.pathname.replace() logic below may look confusing but all its doing is
+            // enabling us to load the api from a CDN and load local modules from the correct location.
+
+            locale: location.search.substring(1) === "" ? "en-us" : location.search.substring(1),
+            packages: [
+                {
+                    name: "emap",
+                    //location: package_path + '/../Lib/emap/'
+                    location: package_path + '/Lib/emap/'
+                }
+            ],
+            parseOnLoad: false
+        };
+    </script>
+
+
+    <script src="//js.arcgis.com/3.38/"></script>
+    <script src="JavaScript/emapConfig.js"></script>
+    <script src="JavaScript/Commonfuncs.js"></script>
+    <script src="JavaScript/initMap.js"></script>
+
+    <meta name="theme-color" content="#7952b3">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="Overlay" style="display:none">
+        <svg class="svgelement">
+            <circle class="PreLoad" cx="50" cy="50" r="40" stroke="#FFB549" stroke-dasharray="78.5 235.5" stroke-width="3" fill="none" />
+            <circle class="PreLoad" cx="50" cy="50" r="30" stroke="#62B5E5" stroke-dasharray="62.8 188.8" stroke-width="3" fill="none" />
+            <circle class="PreLoad" cx="50" cy="50" r="20" stroke="#79BE70" stroke-dasharray="47.1 141.3" stroke-width="3" fill="none" />
+        </svg>
+    </div>
+
+    <div class="OverlayHome">
+        <svg class="svgelement">
+            <circle class="PreLoad" cx="50" cy="50" r="40" stroke="#FFB549" stroke-dasharray="78.5 235.5" stroke-width="3" fill="none" />
+            <circle class="PreLoad" cx="50" cy="50" r="30" stroke="#62B5E5" stroke-dasharray="62.8 188.8" stroke-width="3" fill="none" />
+            <circle class="PreLoad" cx="50" cy="50" r="20" stroke="#79BE70" stroke-dasharray="47.1 141.3" stroke-width="3" fill="none" />
+        </svg>
+    </div>
+
+
+    <div id="MobileMenu" class="MobileMenu">
+
+        <a href="javascript:void(0)" class="closeMenubtn"><i class="fas fa-times"></i></a>
+        <div class="MobileUsersec">
+            <div class="avatar-initials" width="30" height="30" style="margin-left:12px!important;" data-name="Sai Ram"></div>
+            <div class="d-lg-inline-block UserName"><span id="lblHeaderUserName1" style="font-size:13px;"></span>&nbsp; (<span id="lblHeaderRoleName1" style="font-size:13px;"></span>)</div>
+        </div>
+        <div class="accordion MobAccordian" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button i18nReplace" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneB" aria-expanded="true" aria-controls="collapseOneB">
+                        {i18n.DataLabel}
+                    </button>
+                </h2>
+                <div id="collapseOneB" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <a class="dropdown-item PanelTrigger i18nReplace" name="Data Browse by PTT IDs" href="#">{i18n.PTTIDs}</a>
+                        <a class="dropdown-item PanelTrigger i18nReplace namesWidget" name="Data Browse by Names" href="#">{i18n.DataNames}</a>
+                        <a class="dropdown-item PanelTrigger i18nReplace Speciesids" name="Data Browse by IDs" href="#">{i18n.IDs}</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed i18nReplace" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" id="managedropdown" aria-expanded="false" aria-controls="collapseThree">
+                        {i18n.Manage}
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+
+                        <a class="dropdown-item ManageBirds i18nReplace" href="#">{i18n.ManageBirds}</a> <a class="dropdown-item ManageUsers i18nReplace" href="#">{i18n.ManageUsers}</a> <a class="dropdown-item ManageGroupIds i18nReplace" href="#">{i18n.AssignBirdsToPublic}</a> <a class="dropdown-item ManageAuditLogs i18nReplace" href="#">{i18n.ManageDataLogs}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <a class="accordion-button collapsed i18nReplace MReport" id="ReportsNewMob" aria-expanded="false" aria-controls="collapseThree">
+                        {i18n.Reports}
+                    </a>
+                </h2>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed i18nReplace" type="button" data-bs-toggle="collapse" id="toolsDropdown" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        {i18n.Tools}
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <a class="dropdown-item PanelTrigger i18nReplace" id="PrintTab" name="Print" href="#">{i18n.Print}</a>
+                        <a class="dropdown-item PanelTrigger i18nReplace updatemigration" id="MigrationTab" name="Season Correction" href="#">{i18n.UpdateMigration}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ProfileLinks">
+            <a href="#" class="dropdown-item has-icon i18nReplace HomePageEvent" id="Homeicon"> <i class="fas fa-home i18nReplace"></i>&nbsp;&nbsp;{i18n.Home} </a>           
+
+            <a href="JavaScript/BTIS_UserManual.pdf" class="dropdown-item has-icon i18nReplace" download="BTIS_UserManual.pdf"> <i class="far fa-life-ring i18nReplace"></i>&nbsp;&nbsp;{i18n.Help} </a>
+            
+            <a href="#" class="dropdown-item has-icon text-danger i18nReplace logoutevent" id="logouticon"> <i class="fas fa-sign-out-alt i18nReplace"></i>&nbsp;&nbsp;{i18n.Logout} </a>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-primary Btis-Nav">
+        <div class="container-fluid">
+            <div class="col-lg-2 col-sm-4 col-6 pe-3"> <a class="navbar-brand" href="#"><img src="Images/logo.svg" alt="" class="img-fluid" /></a></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse m-2" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle TopLInk FirstItem i18nReplace" href="#" id="Data" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{i18n.DataLabel}</a>
+                        <div class="dropdown-menu" aria-labelledby="Data">
+                            <a class="dropdown-item PanelTrigger i18nReplace" name="Data Browse by PTT IDs" href="#">{i18n.PTTIDs}</a>
+                            <a class="dropdown-item PanelTrigger i18nReplace namesWidget" name="Data Browse by Names" href="#">{i18n.DataNames}</a>
+                            <a class="dropdown-item PanelTrigger i18nReplace Speciesids" name="Data Browse by IDs" href="#">{i18n.IDs}</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown NavDropDown">
+                        <a class="nav-link dropdown-toggle TopLInk i18nReplace" href="#" id="Manage" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{i18n.Manage}</a>
+                        <div class="dropdown-menu animate__zoomIn" aria-labelledby="Manage">
+                            <a class="dropdown-item ManageBirds i18nReplace" href="#">{i18n.ManageBirds}</a>
+                            <a class="dropdown-item ManageUsers i18nReplace" href="#">{i18n.ManageUsers}</a>
+                            <a class="dropdown-item ManageGroupIds i18nReplace assignidstopublic" href="#">{i18n.AssignBirdsToPublic}</a>
+                            <a class="dropdown-item ManageAuditLogs i18nReplace" href="#">{i18n.ManageDataLogs}</a>
+
+                        </div>
+                    </li>
+
+
+
+                    <li class="nav-item dropdown NavDropDown">
+                        <a class="nav-link TopLInk dropdown-toggle i18nReplace" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{i18n.Reports}</a>
+                        <div class="dropdown-menu animate__zoomIn" aria-labelledby="Reports">
+                            <a class="dropdown-item ReportsNew i18nReplace" href="#" id="ReportsNew">{i18n.Reports}</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle TopLInk i18nReplace " href="#" id="Tools" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{i18n.Tools}</a>
+                        <div class="dropdown-menu animate__zoomIn i18nReplace" aria-labelledby="Tools">
+
+                            <a class="dropdown-item PanelTrigger i18nReplace ToolsAnchor" id="PrintTab" name="Print" href="#">{i18n.Print}</a>
+                            <a id="startVideoRecording" class="dropdown-item has-icon startExport i18nReplace ToolsAnchor" name="Export Video" href="#">{i18n.ExportVideo}</a>
+                            <a class="dropdown-item PanelTrigger i18nReplace updatemigration ToolsAnchor" id="MigrationTab" name="Season Correction" href="#">{i18n.UpdateMigration}</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-5 Heading i18nReplace lg-showhide">{i18n.BirdTrackingInformationSystem}</div>
+            <div class="NoneList lg-showhide d-lg-flex" style="padding-left: 34px;">
+                <li class="dropdown">
+                    <div class="avatar-initials" width="30" height="30" style="margin-left:12px!important;" data-name="Sai Ram"></div>
+                    <!--<div class="UserInit">VK</div>-->
+                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user i18nReplace" aria-expanded="false">
+                        <div class="d-sm-none d-lg-inline-block text-white"><span id="lblHeaderUserName" style="font-size:13px;"></span>&nbsp; (<span id="lblHeaderRoleName" style="font-size:13px;"></span>)</div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="#" class="dropdown-item has-icon i18nReplace HomePageEvent" id="Homeicon"> <i class="fas fa-home i18nReplace"></i>&nbsp;&nbsp; {i18n.Home} </a>
+                        <a href="JavaScript/BTIS_UserManual.pdf" class="dropdown-item has-icon i18nReplace" download="BTIS_UserManual.pdf"> <i class="far fa-life-ring i18nReplace"></i>&nbsp;&nbsp;{i18n.Help} </a>
+                        <!--<a id="startVideoRecording" class="dropdown-item has-icon startExport i18nReplace" data-bs-toggle='tooltip' title="{i18n.ExportVideo}" name="Export Video" href="#"> <i class="fas fa-file-video i18nReplace"></i>&nbsp;&nbsp;{i18n.ExportVideo} </a>-->
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item has-icon text-danger i18nReplace logoutevent" id="logouticon"> <i class="fas fa-sign-out-alt i18nReplace"></i>&nbsp;&nbsp;{i18n.Logout} </a>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
+    <div id="mapDiv">
+    </div>
+    <div class="ManageContainer" id="ManageBirds">
+
+        <div id="divBirdinformation"></div>
+    </div>
+    <div class="ManageContainer" id="ManageUsers">
+        <div id="divAdminUsers"></div>
+    </div>
+    <div class="ManageContainer" id="ManageGroupIds">
+        <div id="divAssignIDstopublic"></div>
+    </div>
+    <div class="ManageContainer" id="ManageAuditLogs">
+        <div id="divAuditLogs"></div>
+    </div>
+    <div class="ManageContainer" id="divAnimation" style="overflow:hidden">
+        <div id="divanimateWidget"></div>
+
+    </div>  
+
+    <div class="ManageContainer" id="ReportDivNew" style="overflow:auto">
+
+        <div id="divReportsWidget" style="display:none"></div>
+        <div id="divArgosReport" style="display:none"></div>
+        <div id="divGPSCount" style="display:none"></div>
+        <div id="divDataSummaryWidget" style="display:none"></div>
+        <div id="divMMCWidget" style="display:none"></div>
+        <div id="divDurationTypeReport" style="display:none"></div>
+        <div id="divSensorReportWidget" style="display:none"></div>
+        <div class="box">
+            <a href="javascript:void()" class="CloseContainer i18nReplace" data-bs-toggle='tooltip' title="{i18n.Close}" onclick="closeReport()"><i class="far fa-times-circle"></i></a>
+
+            <div class="container" id="NewReportWid">
+
+                <div class="row">
+                    <div class="d-md-inline-block">
+                        <div>
+
+                            <h6 class="SubHeading  i18nReplace float-start i18nReplace" title="" style="font-weight:bold">{i18n.Reports}</h6>
+                            <img src="Images/Pointer.gif" class="pointer float-start" />
+                            <!--<label class="mt-1" id="llbresults">Total Locations:</label>-->
+                            <div class="float-start i18nReplace" style="margin-top:-2px;">
+                                <span class=" mx-1 TotalLocText">{i18n.TotalLocations} <span id="lblresults" class="mx-1">296868</span></span>
+                            </div>
+
+
+                        </div>
+                        <div class=" float-end mx-0 my-2">
+                            <button class="btn btn-primary i18nReplace" id="DurationBtn">{i18n.DurationReport}</button>
+                            <button class="btn btn-primary i18nReplace" id="MMCBtn">{i18n.MMCReport}</button>
+                            <button class="btn btn-primary i18nReplace" id="TrackingBtn">{i18n.TrackingReport}</button>
+                        </div>
+                    </div>
+
+                    <div id="ReportResult">
+
+                        <div class="row SummTop">
+
+                            <div class="col-lg-4 col-md-12 col-sm-4 col-xs-12" id="ArgosReportBox">
+                                <div class="card CardSummary text-center">
+                                    <div class="card-body">
+                                        <div class="CardItems">
+                                            <div class="CardIcon">
+                                                <!--<i class="fas fa-broadcast-tower fa-3x mb-4 BlueText"></i>-->
+                                                <img src="Images/argos-icon.png" class="img-fluid" />
+                                            </div>
+                                            <div class="CardData">
+                                                <h3 class="i18nReplace">{i18n.ARGOS} - <span id="lblArgosData"> 296868 + " " + </span><span class="lg-showhide2"> ({i18n.Locations}) </span></h3>
+                                                <a href="JavaScript:void()" id="ArgosDashBtn" class="i18nReplace">{i18n.ExploreReport} <i class="fas fa-long-arrow-alt-right flipback"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-12 col-sm-4 col-xs-12" id="GPSReportBox">
+                                <div class="card CardSummary text-center">
+                                    <div class="card-body">
+
+                                        <div class="CardItems">
+                                            <div class="CardIcon">
+                                                <!--<i class="fas fa-broadcast-tower fa-3x mb-4 BlueText"></i>-->
+                                                <img src="Images/gps-icon.png" class="img-fluid" />
+                                            </div>
+                                            <div class="CardData">
+                                                <h3 class="i18nReplace">{i18n.GPS} - <span id="lblGPSData"> 424920 + " " + </span><span class="lg-showhide2"> ({i18n.Locations}) </span></h3>
+                                                <a href="JavaScript:void()" id="GPSDashBtn" class="i18nReplace">{i18n.ExploreReport} <i class="fas fa-long-arrow-alt-right flipback"></i></a>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-12 col-sm-4 col-xs-12" id="GSMReportBox">
+
+                                <div class="card CardSummary text-center">
+                                    <div class="card-body">
+
+                                        <div class="CardItems">
+                                            <div class="CardIcon">
+                                                <!--<i class="fas fa-broadcast-tower fa-3x mb-4 BlueText"></i>-->
+                                                <img src="Images/gsm-icon.png" class="img-fluid" />
+                                            </div>
+                                            <div class="CardData">
+                                                <h3 class="i18nReplace">{i18n.GSM} - <span id="lblGsmData"> 46296 + " " + </span><span class="lg-showhide2"> ({i18n.Locations}) </span></h3>
+                                                <a href="JavaScript:void()" id="GSMDashBtn" class="i18nReplace">{i18n.ExploreReport} <i class="fas fa-long-arrow-alt-right flipback"></i></a>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="row my-4 p-0 mx-0">
+
+        <div class="col-md-6 col-12 DataSummary">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <div id="divDataSummaryPieChart" ></div>
+                </div>
+
+                            </div>
+
+        </div>
+        <div class="col-md-6 col-12 DataSummary">
+            <div class="card">
+                <div class="card-body">
+
+                                    <div id="divDataSummaryBarChart"></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+            
+        </div>
+
+    </div>
+
+
+   
+    <div class="icon-bar">
+        <a class="RightPanelSlide i18nReplace" data-bs-toggle='tooltip' title="{i18n.Layers}" href="#" id="Layers" name="Layers"><i class="fas fa-layer-group"></i></a>
+        <a class="RightPanelSlide i18nReplace" data-bs-toggle='tooltip' title="{i18n.ExternalDataset}" href="#" id="ExternalDataset" name="External Dataset"><i class="fa fa-database"></i></a>
+        <a class="RightPanelSlide i18nReplace" data-bs-toggle='tooltip' title="{i18n.BirdInfo}" id="BirdInfo" name="Bird Info" href="#"><i class="fas fa-dove"></i></a>
+        <div id="navToolbar"></div>
+        <a class="delete i18nReplace" id="btnClearAll" data-bs-toggle='tooltip' title="{i18n.ClearGraphics}" href="#" data-confirm={i18n.Areyousuretoclearthisgraphics?"}><i class="fas fa-trash-alt"></i></a>
+        <a class="RightPanelSlide i18nReplace" data-bs-toggle='tooltip' title="{i18n.Measurement}" id="Measurement" name="Measurement" href="#"><i class="fas fa-ruler"></i></a>
+        <a class="RightPanelSlide i18nReplace" data-bs-toggle='tooltip' title="{i18n.BaseMaps}" id="Basemap" name="Basemaps" href="#"><i class="fas fa-map"></i></a>
+    </div>
+    <div class="card LeftPanel" id="SlidePanel">
+        <div class="PanelToggle" style="display:none;"><i class="fas fa-angle-double-left"></i></div>
+        <div class="card-header i18nReplace"> {i18n.DataBrowsebyPTTDIDs}  <a href="javascript:void()" onclick="closeNav()"><i class="fas fa-times"></i></a></div>
+        <div class="card-body">
+            <div id="divWidget"></div>
+            <div id="divPTTIDWidget" style="display:none"></div>
+            <div id="divPTTDNameWidget" style="display:none"></div>
+            <div id="divSpeciesWidget" style="display:none"></div>
+            <div id="divPrintWidget" style="display:none"></div>
+            <div id="stopoverPopupdiv"></div>
+            <div id="divMigrationWidget" style="display:none !important"></div>
+        </div>
+    </div>
+    <div class="ResultPagePanel" id="ResultPagePanel" style="border:1px solid orange;min-height:250px;">
+        <div class="ResultSection">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item botTab i18nReplace d-flex" role="presentation">
+                    <button class="nav-link i18nReplace nav-linkTop" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">{i18n.QueryResults}</button>
+                    <button class="nav-link i18nReplace nav-linkTop stopoverclassResult" id="profile-tab" style="display:none" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">{i18n.StopOverResults}</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" style="width:100%;height:100%">
+                    <a class="D-PanelClose hidden" href="javascript:void()"><i class="fas fa-times"></i></a>
+                    <div class="rightdiv">
+                        <span class="lg-showhide">
+                            <button type="button" id="ExportExcel" class="btn btn-primary i18nReplace ">{i18n.ExporttoExcel}</button>
+                            <button type="button" id="ExportShape" class="btn btn-primary i18nReplace">{i18n.ExporttoShapes}</button>
+                        </span>
+                        <span class="sm-showhide">
+                            <a class="btn btn-primary i18nReplace" id="ExportExcelMobile" download="downloadexcel" style="display: none;"><i class="fas fa-file-excel"></i></a>
+                            <a class="btn btn-primary i18nReplace" id="ExportExcelMobileNames" download="downloadexcel" style="display: none;"><i class="fas fa-file-excel"></i></a>
+                            <!--<button type="button" id="ExportExcelMobile" class="btn btn-primary i18nReplace "><i class="fas fa-file-excel"></i></button>
+    <button type="button" id="ExportShapeMobile" class="btn btn-primary i18nReplace "><i class="fas fa-shapes"></i></button>-->
+                        </span>
+                    </div>
+                    
+                    <div id="QueryResultsTabContainer" style="height:100%; width:100%;">
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" style="width:100%;height:100%">
+                    <a class="D-PanelClose hidden" href="javascript:void()"><i class="fas fa-times"></i></a>
+                    <div class="rightdiv">
+                        <span class="lg-showhide">
+                            <button type="button" id="StopOverExportExcel" class="btn btn-primary i18nReplace" style="display:none">{i18n.ExporttoExcel}</button>
+                        </span>
+                        <span class="sm-showhide">
+                            <button type="button" id="StopOverExportExcelMobile" class="btn btn-primary i18nReplace "><i class="fas fa-file-excel"></i></button>
+                        </span>
+                    </div>
+                    <div id="StopOverResultsTabContainer" style="height:100%; width:100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card RightPanel" id="LayersPanel">
+        <div class="card-header i18nReplace"> {i18n.Layers} <a href="javascript:void()" onclick="closeRight()"><i class="fas fa-times"></i></a></div>
+        <div class="card-body">
+            <div id="divRightPanelWidget"></div>
+            <div title="{i18n.Layers}" id="divTOCWidget" style="display:none"></div>
+            <div title="{i18n.ExternalDataset}" id="tocWidget" style="display:none"></div>
+            <!--<div title="{i18n.BirdInfo}" id="divSponcerBirdInfo" style="display:none"></div>-->
+            <div title="{i18n.BirdInfo}" id="divBirdInfoWidget" style="display:none"></div>
+            <div title="{i18n.Measurement}" id="divMeasureWidget" style="display:none"></div>
+            <div title="{i18n.BaseMap}" id="divBasemapWidget" style="display:none"></div>
+
+        </div>
+    </div>
+    <script>
+
+
+        window.addEventListener("load", function () {
+            setTimeout(function () {
+                // This hides the address bar:
+                window.scrollTo(0, 1);
+            }, 0);
+        });
+
+        $(document).ready(function () {
+
+            $('.NavDropDown').hover(function () {
+
+                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
+            }, function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
+            });
+
+            $('.dropdown').hover(function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(200);
+            }, function () {
+                $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(200);
+            });
+
+            $('.css').on('click', function (evt) {
+                $('#jquiCSS').attr('href', url);
+                $('.css').removeClass('sel');
+                $(this).addClass('sel');
+            });
+
+
+            $('.dropdown-item').click(function () {
+                $('.dropdown-menu').fadeOut();
+
+            });
+
+            $('.evo-cp-wrap').css('width', '264px');
+
+
+        });
+
+        $(function () {
+            $('.TopLInk').hover(function () {
+                $(this).addClass('active');
+            },
+                function () {
+                    $(this).removeClass('active');
+                });
+        });
+
+        $(".icon-bar a").click(function () {
+            $(".icon-bar a").removeClass("active");
+            $(this).addClass("active");
+            $(".PopUpCard").hide();
+        });
+
+
+        $(".accordion-body .dropdown-item").click(function () {
+            $(".accordion-body .dropdown-item").removeClass("active");
+            $(this).addClass("active");
+
+        });
+
+
+
+        $(".navbar-nav .dropdown-item").click(function () {
+            $(".navbar-nav .dropdown-item").removeClass("active");
+            $(this).addClass("active");
+
+        });
+        $(".dijitTab .tabLabel").click(function () {
+            $(".dijitTab .tabLabel").removeClass("active");
+            $(this).addClass("active");
+        });
+
+        function openNav() {
+            $("#SlidePanel").animate({ left: '0px' }, 300);
+        }
+        function closeNav() {
+            $('.PanelToggle').hide();
+
+            var pgDirR = document.getElementsByTagName('html');
+            if (pgDirR[0].dir == 'rtl' || pgDirR[0].style.direction == 'rtl') {
+                $("#SlidePanel").animate({ right: '-300px' }, 200);
+                $("#SlidePanel").css("width", "300px");
+                $(".StopOverdiv").css("width", "300px");
+                $(".esriSimpleSliderTL").animate({ right: '20px' }, 200);
+
+            }
+            else {
+                $("#SlidePanel").animate({ left: '-300px' }, 200);
+                $("#SlidePanel").css("width", "300px");
+                $(".StopOverdiv").css("width", "300px");
+                $(".esriSimpleSliderTL").animate({ left: '20px' }, 200);
+
+            }
+
+        }
+        function closeRight() {
+            var pgDirR = document.getElementsByTagName('html');
+            if (pgDirR[0].dir == 'rtl' || pgDirR[0].style.direction == 'rtl') {
+
+                $(".RightPanel").animate({
+                    left: '-350px'
+                }, 200);
+                $(".PopUpCard").fadeOut();
+                $(".icon-bar a").removeClass("active");
+
+            }
+            else {
+
+                $(".RightPanel").animate({
+                    right: '-350px'
+                }, 200);
+                $(".PopUpCard").fadeOut();
+                $(".icon-bar a").removeClass("active");
+
+            }
+        }
+
+        $('.botTab').click(function () {
+            $(".ResultPagePanel").show().animate({
+                bottom: '0px'
+            }, 200);
+
+            $(".ResultSection").show().animate({
+                bottom: '0px'
+            }, 200);
+            $('.D-PanelClose').fadeIn();
+            $('#myTab').hide();
+            $('.rightdiv button').show();
+
+        });
+
+        $('.D-PanelClose').click(function () {
+            $("#ResultPagePanel").show().animate({
+                bottom: '-265px'
+            }, 200);
+            $(".ResultSection").animate({
+                bottom: '-270px'
+            }, 200, function () {
+                $('.D-PanelClose').fadeOut(); // applies display: none; to the element .panel
+                $('#myTab').show();
+                $('.botTab .nav-link').removeClass("active");
+                $('.rightdiv button').hide();
+            });
+        });
+        $("#ReportsNew").click(function () {
+            $(".CloseContainer").css("display", "block");
+            $("#NewReportWid").css("display", "block");
+
+        });
+        $("#ReportsNewMob").click(function () {
+            $(".CloseContainer").css("display", "block");
+            $("#NewReportWid").css("display", "block");
+
+        });
+
+
+        $('#Results, .MReport').click(function () {
+            var panwid = $('#SlidePanel').width();
+            $("#MobileMenu").show().animate({ left: '-300px' }, 100);
+            $(".MobileOverlay").hide();
+
+            var pgDir = document.getElementsByTagName('html');
+
+            if (pgDir[0].dir == 'rtl' || pgDir[0].style.direction == 'rtl')
+                $(".esriSimpleSliderTL").animate({ right: '20px' }, 200);
+            else
+                $(".esriSimpleSliderTL").animate({ left: '20px' }, 200);
+
+
+            $(".ManageContainer").show().animate({
+                bottom: '-100%'
+            }, 200);
+
+            $("#ReportDiv").show().animate({
+                bottom: '0px'
+            }, 500);
+
+
+
+
+
+
+            if (pgDir[0].dir == 'rtl' || pgDir[0].style.direction == 'rtl') {
+                $("#SlidePanel").show().animate({
+
+                    right: -panwid
+                }, 200);
+            }
+            else {
+                $("#SlidePanel").show().animate({
+
+                    left: -panwid
+                }, 200);
+            }
+
+            $(".ReportsHideShow").hide();
+            $("#ReportMainSec").show();
+            $(".CloseContainer").css("display", "block");
+        });
+
+        $('.ReportBut1').click(function () {
+            $(".ManageContainer").show().animate({
+                bottom: '-100%'
+            }, 200);
+
+            $("#divDurationTypeReport").show().animate({
+                bottom: '0px'
+            }, 500);
+            $("#SlidePanel").animate({ left: '-300px' }, 200);
+            $(".esriSimpleSliderTL").animate({ left: '20px' }, 200);
+
+        });
+        $('.ReportBut2').click(function () {
+            $(".ManageContainer").show().animate({
+                bottom: '-100%'
+            }, 200);
+
+            $("#GPSReportDiv").show().animate({
+                bottom: '0px'
+            }, 500);
+            $("#SlidePanel").animate({ left: '-300px' }, 200);
+            $(".esriSimpleSliderTL").animate({ left: '20px' }, 200);
+
+        });
+        $('.SummaryBut').click(function () {
+            $(".ManageContainer").show().animate({
+                bottom: '-100%'
+            }, 200);
+
+            $("#SummaryDiv").show().animate({
+                bottom: '0px'
+            }, 500);
+            $("#SlidePanel").animate({ left: '-300px' }, 200);
+            $(".esriSimpleSliderTL").animate({ left: '20px' }, 200);
+
+        });
+
+        $('.MMCBut').click(function () {
+            $(".ManageContainer").show().animate({
+                bottom: '-100%'
+            }, 200);
+
+            $("#MMCDiv").show().animate({
+                bottom: '0px'
+            }, 500);
+            $("#SlidePanel").animate({ left: '-300px' }, 200);
+            $(".esriSimpleSliderTL").animate({ left: '20px' }, 200);
+            $("#NewReportWid").css("display", "none");
+        });
+        var pgDir = document.getElementsByTagName('html');
+
+        if (pgDir[0].dir == 'rtl' || pgDir[0].style.direction == 'rtl') {
+            $(".navbar-brand").css('margin-left', 'auto');
+            $(".navbar-brand").css('margin-right', '10px');
+        }
+        else {
+            $(".navbar-brand").css('margin-left', '10px');
+            $(".navbar-brand").css('margin-right', 'auto');
+        }
+
+
+        function closeReport() {
+            $(this).closest(".ManageContainer").show().animate({
+                bottom: '-100%'
+            }, 20);
+            $("#divReportsWidget").css("display", "none");
+            $("#divArgosReport").css("display", "none");
+            $("#divGPSCount").css("display", "none");
+            $("#divDataSummaryWidget").css("display", "none");
+            $("#divMMCWidget").css("display", "none");
+            $("#divDurationTypeReport").css("display", "none");
+
+
+            event.stopPropagation();
+        }
+
+        
+        
+        $("#argoslocationBtn").click(function () {
+            $('html,body').animate({
+                scrollTop: $(".ManageContainer").offset().top
+            },
+                'fast');
+            $(".ReportsDisable").css("display", "none");
+            $("#divArgosReport").css("display", "block");
+            $(".CloseContainer").css("display", "none");
+
+            $(".reportscls").css("display", "none");
+            $(".btnassigncolor").css("display", "none");
+            $(".displaytextcolor").css("display", "none");
+
+            $("#container2").html("");
+        });
+        $("#gpscountBTn").click(function () {
+            $('html,body').animate({
+                scrollTop: $(".ManageContainer").offset().top
+            },
+                'fast');
+            $(".ReportsDisable").css("display", "none");
+            $("#divGPSCount").css("display", "block");
+            $(".CloseContainer").css("display", "none");
+        });
+        $("#DataSumBtn").click(function () {
+            $('html,body').animate({
+                scrollTop: $(".ManageContainer").offset().top
+            },
+                'fast');
+            $(".ReportsDisable").css("display", "none");
+            $("#divDataSummaryWidget").css("display", "block");
+            $(".CloseContainer").css("display", "none");
+        });
+       
+        // Mobile Menu Script
+
+        $('.navbar-toggler').click(function () {
+            $("#MobileMenu").show().animate({
+                left: '0px'
+            }, 100);
+            $(".MobileOverlay").show();
+
+        });
+
+        $('.closeMenubtn').click(function () {
+            $("#MobileMenu").show().animate({ left: '-300px' }, 100);
+            $(".MobileOverlay").hide();
+
+        });
+
+
+        $('.MobileMenu .dropdown-item').click(function () {
+            $("#MobileMenu").show().animate({ left: '-300px' }, 100);
+            $(".MobileOverlay").hide();
+
+        });
+
+        $('.PanelToggle').click(function () {
+
+            var panwid = $('.LeftPanel').width();
+            var pgDir = document.getElementsByTagName('html');
+
+            if (pgDir[0].dir == 'rtl' || pgDir[0].style.direction == 'rtl') {
+                var SlideDiv = $(".LeftPanel").css("right");
+
+                if (SlideDiv == "0px") {
+                    $(".LeftPanel").show().animate({
+                        right: -panwid
+                    }, 200);
+                    $('.PanelToggle').html('<i class="fas fa-angle-double-right"></i>');
+                    $("#mapDiv_zoom_slider").css("right", '20px');
+                } else {
+
+                    $(".LeftPanel").show().animate({
+                        right: '0px'
+                    }, 200);
+                    $('.PanelToggle').html('<i class="fas fa-angle-double-left"></i>');
+                    $("#mapDiv_zoom_slider").css({ 'right': panwid + 20 + "px" });
+                }
+            }
+
+            else {
+
+                var SlideDiv = $(".LeftPanel").css("left");
+                if (SlideDiv == "0px") {
+                    $(".LeftPanel").show().animate({
+                        left: -panwid
+                    }, 200);
+                    $("#mapDiv_zoom_slider").css("left", '20px');
+                    $('.PanelToggle').html('<i class="fas fa-angle-double-right"></i>');
+
+
+                } else {
+                    $(".LeftPanel").show().animate({
+                        left: '0px'
+                    }, 200);
+                    $("#mapDiv_zoom_slider").css({ 'left': panwid + 20 + "px" });
+                    $('.PanelToggle').html('<i class="fas fa-angle-double-left"></i>');
+                }
+            }
+        });
+
+        // New Reports Script by Vinodh
+        $('#ReportsNew, #ReportsNewMob').click(function () {
+            var panwid = $('#SlidePanel').width();
+            $("#MobileMenu").show().animate({ left: '-300px' }, 100);
+            $(".MobileOverlay").hide();
+            $('.PanelToggle').hide();
+            $('.PanelToggleAnim').hide();
+
+            var pgDir = document.getElementsByTagName('html');
+
+            if (pgDir[0].dir == 'rtl' || pgDir[0].style.direction == 'rtl')
+                $(".esriSimpleSliderTL").animate({ right: '20px' }, 200);
+            else
+                $(".esriSimpleSliderTL").animate({ left: '20px' }, 200);
+
+
+            $(".ManageContainer").show().animate({
+                bottom: '-100%'
+            }, 200);
+
+            $("#ReportDivNew").show().animate({
+                bottom: '0px'
+            }, 500);
+
+
+
+
+
+
+            if (pgDir[0].dir == 'rtl' || pgDir[0].style.direction == 'rtl') {
+                $("#SlidePanel").show().animate({
+
+                    right: -panwid
+                }, 200);
+            }
+            else {
+                $("#SlidePanel").show().animate({
+
+                    left: -panwid
+                }, 200);
+            }
+
+            $(".ReportsHideShow").hide();
+            $("#ReportMainSec").show();
+            $(".CloseContainer").css("display", "block");
+            if ($(window).width() < 900 && $(window).width() > 501) {
+                $('.MobileCard').addClass("ChangeWidthT");
+            }
+            else {
+                $('.MobileCard').removeClass("ChangeWidthT");
+            }
+
+            if ($(window).width() < 500) {
+                $('.MobileCard').addClass("ChangeWidth");
+            }
+            else {
+                $('.MobileCard').removeClass("ChangeWidth");
+            }
+        });
+        $('.BacktoDash').click(function () {
+
+            $(this).closest('.ReportSec').hide();
+            $("#NewReportWid").fadeIn();
+            $(".CloseContainer").css("display", "block");
+            $(".BacktoDash").hide();
+        });
+
+
+
+        $('#ViewReport').click(function () {
+            $(".ReportSec").hide();
+            $("#TablesDiv").fadeIn();
+            $(".BacktoDash").hide();
+            $(".BacktoRep").show();
+
+        });
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,103 @@
+﻿:root {
+    --surface: #ef6603;
+    --bg: #e4e4e7;
+    --text: #ffff;
+    --shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --inset: inset 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.15);
+}
+
+
+
+#whole_toggle .dark-theme {
+    /*--surface: #27272a;*/
+    --surface: #ef6603;
+    /*--bg: #18181b;*/
+    --bg: #e4e4e7;
+    --text: #a1a1aa;
+    --shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+    --shadow-inner: inset 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.6);
+}
+
+
+
+/*body {
+display: flex;
+background-color: var(--surface);
+height: 100vh;
+transition: background-color 0.15s ease-in 0.4s;
+}*/
+
+
+
+#whole_toggle .toggle-theme {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    position: relative;
+    height: 30px;
+    /* width: 200px;*/
+    width: 160px;
+}
+
+
+
+    #whole_toggle .toggle-theme input {
+        position: absolute;
+        height: 0;
+        width: 0;
+        opacity: 0;
+    }
+
+
+
+#whole_toggle .switch {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--bg);
+    box-shadow: var(--inset);
+    border-radius: 50px;
+    transition: background-color 0.15s ease-in 0.4s, box-shadow 0.15s ease-in 0.4s;
+    user-select: none;
+    cursor: pointer;
+}
+
+
+
+    #whole_toggle .switch:before {
+        position: absolute;
+        content: '';
+        height: 20px;
+        width: 80px;
+        top: 5px;
+        left: 5px;
+        background-color: var(--surface);
+        box-shadow: var(--shadow);
+        border-radius: 40px;
+        transition: transform 0.3s, background-color 0.15s ease-in 0.4s, box-shadow 0.15s ease-in 0.4s;
+    }
+
+
+
+input:checked + .switch:before {
+    transform: translateX(70px);
+}
+
+
+
+#whole_toggle .toggle-theme p {
+    /* font-family: 'Montserrat', sans-serif;*/
+    /* color: var(--text);*/
+    transition: color 0.15s ease-in 0.4s;
+    cursor: pointer;
+    z-index: 1;
+    margin-top: 15px;
+}
+
+.wholetext{
+    position:relative;
+    left:-5px;
+}

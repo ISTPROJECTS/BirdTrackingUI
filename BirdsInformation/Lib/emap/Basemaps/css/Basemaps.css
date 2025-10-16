@@ -1,0 +1,25 @@
+.selectedIcon:before {
+    font-family: FontAwesome;
+    content: "\f046";
+}
+
+.emptyIcon:before {
+    font-family: FontAwesome;
+    content: "\f096";
+}
+
+.basemapsIcon:before {
+    font-family: FontAwesome;
+    content: "\f009";
+}
+.esriBasemapGalleryNode {
+    width: 120px;
+    margin: 16px !important;
+    height: 80px !important;
+}
+.esriBasemapGalleryThumbnail {
+    width: 120px !important;
+    height: 80px !important;
+}
+
+

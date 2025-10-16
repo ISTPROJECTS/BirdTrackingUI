@@ -1,0 +1,48 @@
+﻿<div data-dojo-attach-point="DivBirdInfo1" class="TextColor">
+    <form>
+        <div class="form-group">
+            <label for="names">${_i18n.SpeciesNames}:</label>
+
+            <select class="form-control" name="Birdsnames" data-dojo-attach-point="ddlSpeciesName" data-dojo-attach-event="onchange:getBirdPTTDIDs">
+            </select>
+            <small data-dojo-attach-point="lblSpecies" style="display:none" class="errorClass">${_i18n.SelectSpeciesNames}</small>
+        </div>
+        <div class="form-group">
+            <label for="birdyears">${_i18n.ChooseYear}: </label>
+
+            <select class="form-control selectYear" name="BirdYearInformation" data-dojo-attach-point="ddlBirdYear" data-dojo-attach-event="onchange:getyearpttd">
+            </select>
+            <small data-dojo-attach-point="lblyear" style="display:none" class="errorClass">${_i18n.SelectYear}</small>
+        </div>
+        <div class="form-group SumoMultiselect">
+            <label for="birdsinfo">${_i18n.ChooseaBird}: </label>
+            <select class="form-control" name="BirdInfo" data-dojo-attach-point="ddlbirdinfo" data-dojo-attach-event="onclick:getBirdId" multiple>
+            </select>
+            <small data-dojo-attach-point="lblBirdid" style="display:none" class="errorClass">${_i18n.SelectBird}</small>
+        </div>
+        <div class="form-group overflow-auto">
+            <button class="btn btn-primary float-start" data-dojo-attach-point="getbirdinfodetails" type="button" data-dojo-attach-event="onclick:getBirdInfo"> ${_i18n.GetBirdInfo} </button>
+            <span>
+                <button class="btn btn-primary float-start" data-dojo-attach-point="ExportExcel" type="button" style="display:none" data-dojo-attach-event="onclick:getExportData"> ${_i18n.Export} </button>
+            </span>
+            <span>
+                <a href="#" class="btn btn-primary float-start" data-dojo-attach-point="ExportExcelBirdInfoMobile" style="display:none" target="_blank" download="downloadBirdInfo.csv"> ${_i18n.Export} </a>
+            </span>
+        </div>
+
+        <!--<div class="form-group overflow-auto" data-dojo-attach-point="Testdiv" style="display:none">
+        <a href="SampleFiles/065423.zip" class="dropdown-item has-icon" download="065423.zip"  >Export zip </a>
+        <a href="SampleFiles/Species_Information_Report.csv" class="dropdown-item has-icon" download="Species_Information_Report.csv" >Export CSV </a>
+    </div>-->
+
+
+        <div class="form-group">
+            <div data-dojo-attach-point="bird_table" class="slideshow-container"></div>
+            <div data-dojo-attach-point="divslider"></div>
+        </div>
+
+    </form>
+</div>
+
+
+

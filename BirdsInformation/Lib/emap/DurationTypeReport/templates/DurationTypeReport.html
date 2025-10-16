@@ -1,0 +1,113 @@
+﻿
+<div data-dojo-attach-point="SensorTypeSec" class="ReportsHideShow" style="display:none;">
+    <a href="javascript:void()" class="ReportsDashLink sm-showhide"><i class="fas fa-arrow-left"></i>&nbsp;${_i18n.ReportDashBoard}</a>
+    <a href="javascript:void()" class="BacktoDash lg-showhide" style="top:30px"><i class="fas fa-arrow-left"></i></a>
+    <div class="AnimationSideDiv AnimationSideDivOther">
+        <h5 class="SubHeading"><label style="font-weight:bold">${_i18n.Reports}</label></h5>
+
+        <div class="AnimBody-R">
+            <form>
+                <div class="form-group">
+                    <label for="SensorType">${_i18n.SensorType} </label>
+                    <select class="form-control sensortype" name="sensor" data-dojo-attach-point="ddlsensor" data-dojo-attach-event="onchange:GetPlatformidsbasedonSensortype">
+                    </select>
+                    <small data-dojo-attach-point="lblSensortype" style="display:none" class="errorClass">${_i18n.PleaseSelectSensorType}</small>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="Speciesname">${_i18n.SpeciesName} </label>
+                    <select name="SpeName" data-dojo-attach-point="ddlSpeciesName" data-dojo-attach-event="onchange:getPTTDS">
+                    </select>
+                    <small data-dojo-attach-point="lblSpeciesName" style="display:none"></small>
+                </div>
+
+                <div class="form-group SumoMultiselect">
+                    <label for="platformid" class="float-start">${_i18n.SelectPlatformID}</label> <div class="float-end"><div class="LegDiv"><span class="Green"></span>${_i18n.Active}</div><div class="LegDiv"><span class="Red"></span>${_i18n.Inactive}</div></div>
+                    <select class="form-control platformids" name="platform" data-dojo-attach-point="ddlplatformid" data-dojo-attach-event="onchange:getStartEndDates" multiple>
+                    </select>
+                    <small data-dojo-attach-point="lblplatformid" style="display:none"></small>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="fromdate">${_i18n.FromDate} :</label>
+                    <input type="text" data-date-format="dd-mm-yyyy" class="dateclass" data-dojo-attach-point="Reportfromdate" placeholder="${_i18n.ddmmyyyy}" data-dojo-attach-event="onclick:ClearLabelfromdate" data-auto-close="true" readonly="readonly">
+                    <small data-dojo-attach-point="lblfromdate" style="display:none" class="errorClass lblfromdate">${_i18n.PleaseEnterFromDate} </small>
+                </div>
+                <div class="form-group ">
+                    <label for="todate">${_i18n.ToDate} :</label>
+                    <input type="text" data-date-format="dd-mm-yyyy" class="dateclass" data-dojo-attach-point="Reporttodate" placeholder="${_i18n.ddmmyyyy}" data-dojo-attach-event="onclick:ClearLabeltodate" data-auto-close="true" readonly="readonly">
+                    <small data-dojo-attach-point="lbltodate" style="display:none" class="errorClass lbltodate">${_i18n.PleaseEnterToDate} </small>
+                    <small data-dojo-attach-point="lblgreater" style="display:none" class="errorClass lblgreater">${_i18n.ToDateShouldbeGreaterthanFromDate} </small>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label for="Durationtype">${_i18n.DurationType} </label>
+                    <select class="form-control Durationtype" name="DurationType" data-dojo-attach-point="ddlDurationtype" data-dojo-attach-event="onclick:ClearDurationType">
+                    </select>
+                    <small data-dojo-attach-point="lblDurationtime" style="display:none" class="errorClass">${_i18n.PleaseSelectDurationType}</small>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" class="btn btn-primary w-100" data-dojo-attach-event="onclick:getdurationdata">${_i18n.GenerateReports}</button>
+                </div>
+                <div class="form-group lg-showhide">
+                    <button type="button" data-dojo-attach-point="getRawData" class="btn btn-primary w-100 mt-3 sm-showhide" data-dojo-attach-event="onclick:RawDataGraph">${_i18n.RawData}</button>
+                </div>
+                <div class="form-group sm-showhide">
+                    <a href="#" class="btn btn-primary w-100 mt-3 float-start" data-dojo-attach-point="getRawDataMobile" download="download"> ${_i18n.RawData} </a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="ReportsDiv">
+        <div class="TpPanel">
+            <h5 class="SubHeading MobileStringLength"><label style="font-weight:bold">${_i18n.DurationReport}</label></h5>
+            <a class="btn btn-primary PullRightBut ReportExportbtn" style="display: none;" data-dojo-attach-point="exportReportsMobile">
+                <img src="Images/ExportReport.svg" />
+            </a>
+            <ul class="nav nav-tabs mt-3 ReportTabs" data-dojo-attach-point="reporttab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a data-dojo-attach-point="item1" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"></a>
+                </li>
+            </ul>
+
+            <div class="tab-content ReportTab-Content" data-dojo-attach-point="myTabContent2">
+                <div class="tab-pane fade show active" data-dojo-attach-point="home" role="tabpanel" aria-labelledby="home-tab">
+
+
+                    <div class="card">
+                        <div class="card-body ScrollCard">
+                            <div data-dojo-attach-point="divreports">
+
+                                <div class="flexWM ColorPicGroup mb-1 floatRight1" style="display:none;padding-right:10px">
+
+                                    
+                                </div>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary PullRightBut ReportExportbtn" style="display: none;" data-dojo-attach-point="exportReports" data-dojo-attach-event="onclick:ExportReport">${_i18n.ExportReport}</button>
+                               
+                            </div>
+                            <div id="container"></div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane fade" data-dojo-attach-point="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+                    <div class="tab-pane fade" data-dojo-attach-point="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+</div>

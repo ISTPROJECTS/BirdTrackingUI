@@ -1,0 +1,21 @@
+﻿define({
+    High: "عالي",
+    Low: "منحفض",
+    AnimationSpeed: "سرعة الحركة",
+    Update: "تحديث",
+    Stop: "قف",
+    NoResultFound: "لا توجد نتائج",
+    DataAvaiableBetween: "البيانات المتوفرة بين",
+    PID: "رمز الجهاز",
+    Date: "التاريخ",
+    Lat: "خط العرض",
+    Long: "خط الطول",
+    Speed: "سرعة",
+    Altitude: "ارتفاع",
+    Record: "Video Record",
+    ExportVideo: "تصدير الفيديو",
+    Distancetravelled: "(km) المسافة المقطوعة",
+    HideInfoWindow: "إخفاء نافذة المعلومات ",
+    ShowInfoWindow: "إظهار نافذة المعلومات",
+
+});
