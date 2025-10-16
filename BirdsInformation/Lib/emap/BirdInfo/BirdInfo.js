@@ -135,12 +135,22 @@
        
         getbirdnames: function () {
             var currentWidget = this;
+            var token = localStorage.getItem('token'); // Assuming 'token' is the key where your JWT is stored
+            var refreshtoken = localStorage.getItem('refreshtoken');
+
+            if (!token) {
+                console.error("Token not found in localStorage!");
+                return;
+            }
             $(currentWidget.bird_table).empty();
             $(currentWidget.divslider).empty();
             $.ajax({
                 url: currentWidget.ServiceUrl + "jSONDomainBirdInfo",
                 type: 'GET',  // http method
                 crossDomain: true,
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
                 success: function (result) {
                     var jsonObj = JSON.parse(result.JSONDomainBirdInfoResult);
                     if (jsonObj != null) {

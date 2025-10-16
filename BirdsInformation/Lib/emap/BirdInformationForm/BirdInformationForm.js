@@ -127,9 +127,19 @@
         getBirdIds: function () {
             var currentWidget = this;
             var url = currentWidget.ServiceUrl + "jsonBirdIds";
+            var token = localStorage.getItem('token'); // Assuming 'token' is the key where your JWT is stored
+            var refreshtoken = localStorage.getItem('refreshtoken');
+
+            if (!token) {
+                console.error("Token not found in localStorage!");
+                return;
+            }
             $.ajax({
                 url: url,
-                type: 'GET',  // http method                
+                type: 'GET',  // http method   
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
                 crossDomain: true,
                 success: function (result) {
                     var jsonObj = JSON.parse(result.JSONBirdIDsResult);
@@ -563,8 +573,18 @@
 
         GetBirdsTableData: function () {
             var currentWidget = this;
+            var token = localStorage.getItem('token'); // Assuming 'token' is the key where your JWT is stored
+            var refreshtoken = localStorage.getItem('refreshtoken');
+
+            if (!token) {
+                console.error("Token not found in localStorage!");
+                return;
+            }
             $.ajax({
                 type: "GET",
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
                 url: currentWidget.ServiceUrl + "jsonBirdAge",
                 success: function (val) {
                     var birdinfo = jQuery.parseJSON(val.JSONBirdAgeResult);
@@ -578,6 +598,9 @@
 
             $.ajax({
                 type: "GET",
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
                 url: currentWidget.ServiceUrl + "jsonBirdSex",
                 success: function (val) {
                     var birdinfo = jQuery.parseJSON(val.JSONBirdSexResult);
@@ -590,6 +613,9 @@
 
             $.ajax({
                 type: "GET",
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
                 url: currentWidget.ServiceUrl + "jsonBirdSpecies",
                 success: function (val) {
                     var birdinfo = jQuery.parseJSON(val.JSONBirdSpeciesResult);
@@ -602,6 +628,9 @@
 
             $.ajax({
                 type: "GET",
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
                 url: currentWidget.ServiceUrl + "jsonBirdSite",
                 success: function (val) {
                     var birdinfo = jQuery.parseJSON(val.JSONBirdSiteResult);

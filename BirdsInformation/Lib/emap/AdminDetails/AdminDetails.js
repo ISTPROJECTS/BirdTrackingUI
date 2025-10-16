@@ -160,9 +160,20 @@
         },
         PublicSponcerBirds: function () {
             var currentWidget = this;
+            var token = localStorage.getItem('token'); // Assuming 'token' is the key where your JWT is stored
+            var refreshtoken = localStorage.getItem('refreshtoken');
+
+            if (!token) {
+                console.error("Token not found in localStorage!");
+                return;
+            }
+
             $.ajax({
                 url: currentWidget.ServiceUrl + "JsonPublicSponsorAssignedIds1",
                 type: 'GET',  // http method
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
                 crossDomain: true,
                 success: function (result) {
                     var jsonObj = JSON.parse(result.JsonPublicSponsorAssignedIds1Result);
@@ -251,10 +262,20 @@
         },
         getBirdIds: function (SelectDropdown, obj) {
             var currentWidget = this;
+            var token = localStorage.getItem('token'); // Assuming 'token' is the key where your JWT is stored
+            var refreshtoken = localStorage.getItem('refreshtoken');
+
+            if (!token) {
+                console.error("Token not found in localStorage!");
+                return;
+            }
             var url = currentWidget.ServiceUrl + "jsonBirdIds";
             $.ajax({
                 url: url,
                 type: 'GET',  // http method
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
                 crossDomain: true,
                 success: function (result) {
                     var jsonObj = JSON.parse(result.JSONBirdIDsResult);
@@ -324,10 +345,20 @@
     
         getAssignBirds: function (SelectDropdown, obj) {
             var currentWidget = this;
+            var token = localStorage.getItem('token'); // Assuming 'token' is the key where your JWT is stored
+            var refreshtoken = localStorage.getItem('refreshtoken');
+
+            if (!token) {
+                console.error("Token not found in localStorage!");
+                return;
+            }
             var url = currentWidget.ServiceUrl + "jsonBirdIds";
             $.ajax({
                 url: url,
                 type: 'GET',  // http method
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
                 crossDomain: true,
                 success: function (result) {
                     $(currentWidget.ddlBirdAssign).html("");

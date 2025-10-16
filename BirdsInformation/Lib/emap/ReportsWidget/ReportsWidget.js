@@ -240,9 +240,19 @@
 
         getBirdids: function () {
             var currentWidget = this;
+            var token = localStorage.getItem('token'); // Assuming 'token' is the key where your JWT is stored
+            var refreshtoken = localStorage.getItem('refreshtoken');
+
+            if (!token) {
+                console.error("Token not found in localStorage!");
+                return;
+            }
             $.ajax({
                 url: currentWidget.ServiceUrl + "jsonBirdIds",
                 type: 'GET',  // http method
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                },
                 crossDomain: true,
                 success: function (result) {
                     $(currentWidget.ddlplatformid).html("");
