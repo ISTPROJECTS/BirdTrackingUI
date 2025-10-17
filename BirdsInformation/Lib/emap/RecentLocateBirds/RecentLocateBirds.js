@@ -59,12 +59,12 @@
 
             return new Promise(function (resolve, reject) {
                 $.ajax({
-                    url: "http://localhost:53925/Service1.svc/RefreshToken",  // Correct URL syntax
+                    url: currentWidget.ServiceUrl + "/refreshToken",  // Correct URL syntax
                     type: 'POST',  // HTTP method
                     contentType: 'application/json',  // Set content type to JSON
                     data: JSON.stringify({ rtoken }),  // Convert the data object to a JSON string
                     success: function (data) {
-                        resolve(data.accessToken);  // Resolve the promise with the new access token
+                        resolve(data);  // Resolve the promise with the new access token
                     },
                     error: function (xhr, status, error) {
                         console.error('Error refreshing token:', error);  // Log the error
@@ -99,9 +99,9 @@
                 type: "GET",
                 url: url,
                 crossDomain: true,
-                headers: {
-                    'Authorization': `Bearer ${token}`,
-                },
+                //headers: {
+                //    'Authorization': `Bearer ${token}`,
+                //},
                 success: function (respnse) {
                     console.log(respnse)
                     var birdsLastTrackInfo = JSON.parse(respnse.JsonGetRecentLiveBirdsResult);
@@ -214,14 +214,12 @@
                     }
                 },
                 error: function (error) {
-                    if (error.status === 401 || error.status === 400) {
-                        //localStorage.setItem('token', newAccessToken);
-                        //getBirdsRecentLocation();
-                        return currentWidget.refreshAccessToken1(refreshtoken).then(newAccessToken => {
-                            localStorage.setItem('token', newAccessToken);
-                            return getBirdsRecentLocation();  // Retry with the new token
-                        });
-                    }
+                    //if (error.status === 401) {
+                    //    return currentWidget.refreshAccessToken1(refreshtoken).then(newAccessToken => {
+                    //        localStorage.setItem('token', newAccessToken);
+                    //        currentWidget.getBirdsRecentLocation();  // Retry with the new token
+                    //    });
+                    //}
                     console.log(error)
                 }
             })

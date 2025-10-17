@@ -1,3 +1,128 @@
-﻿Public Class Class1
+﻿# ---- OS junk ----
+.DS_Store
+Thumbs.db
 
-End Class
+# ---- Visual Studio / .NET build ----
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+[Ll]ogs/
+[Bb]enchmarkDotNet.Artifacts/
+TestResults/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+*.cache
+*.ide/
+.vs/
+_ReSharper*/
+*.DotSettings.user
+*.ncrunch*
+*.opendb
+*.VC.db
+*.VC.VC.opendb
+[Bb]in/
+[Oo]bj/
+*.dll
+*.pdb
+*.exe
+*.log
+
+
+# ---- Packages / Tools ----
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/packages/
+packages/
+**/packages/*/**     # keep .keep or .placeholder if needed
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+# Python (if you use scripts)
+__pycache__/
+*.pyc
+
+# ---- Config secrets (don’t commit secrets!) ----
+*.secret.json
+*.secrets.json
+*.local.json
+appsettings.Development.json
+appsettings.*.local.json
+secrets.json
+.env
+.env.*
+
+# ---- IIS / Publishing / Artifacts ----
+PublishProfiles/*.pubxml.user
+*.pubxml.user
+*.pubxml~*
+*.Publish.xml
+*.pubxml
+# Web deploy / msbuild outputs
+*.deploy.cmd
+*.source.manifest
+*.pubxml
+# Local IIS Express
+.iis/
+iisexpress.log
+*.vspscc
+*.vssscc
+
+# ---- Frontend build outputs (if any SPA/Dojo/Angular) ----
+dist/
+build/
+.tmp/
+coverage/
+.eslintcache
+.angular/
+.sass-cache/
+
+# ---- IDEs ----
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# ---- Tests / Coverage ----
+coverage/
+*.coverage
+*.coveragexml
+*.trx
+
+# ---- SQL / Data dumps ----
+*.mdf
+*.ldf
+*.ndf
+*.bak
+*.bacpac
+*.dacpac
+*.sqlproj.user
+*.publish.xml
+
+# ---- Logs & temp ----
+*.log
+logs/
+temp/
+tmp/
+
+# ---- Images/artifacts generated at runtime ----
+wwwroot/lib/
+wwwroot/dist/
+wwwroot/*.map
+
+# ---- ArcGIS/Map assets (generated) ----
+**/arcgis_js_api/**/dojo/*/build-report/
+**/*/dojoBuild/*
+.mapcache/
+
+# ---- Misc ----
+*.swp
+*.swo
+*.orig
